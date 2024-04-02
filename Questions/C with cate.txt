@@ -1,0 +1,104 @@
+
+
+
+1. Basic Concepts:
+
+What is the difference between a function declaration and definition in C?
+Explain the concept of scope in C.
+Describe the importance of the return statement in a function.
+What is the significance of the C preprocessor directives?
+Explain the concept of typecasting in C.
+Describe the difference between local and global variables.
+How does C handle integer overflow?
+Explain the concept of implicit and explicit type conversion.
+Describe the role of the C standard library in programming.
+2. Input and Output:
+
+Explain the concept of file pointers in C.
+What is the purpose of the fseek() function in file handling?
+How do you handle errors while reading from or writing to a file in C?
+Describe the use of formatted input and output functions in C.
+Explain the role of the fflush() function in input and output operations.
+Describe the behavior of the feof() function in file handling.
+What is buffering in C input and output operations?
+Explain the purpose of the ungetc() function in C.
+How do you handle end-of-file conditions when reading from a file?
+Describe the use of binary input and output functions in C.
+3. Comments and Header Files:
+
+What are the different types of comments supported in C?
+Describe the conventions for writing comments in C programs.
+Explain the purpose of conditional compilation in C header files.
+How do you guard against multiple inclusions of header files?
+Describe the significance of include guards in header files.
+What is the purpose of the #define directive in C?
+4. Control Flow:
+
+Explain the concept of nested control structures in C.
+Describe the behavior of the break statement in nested loops.
+How do you use the continue statement in C?
+Explain the purpose of the goto statement in C.
+Describe the behavior of the return statement in nested functions.
+How do you handle exceptions in C programming?
+Explain the concept of exception handling using setjmp() and longjmp() functions.
+Describe the behavior of the assert() macro in C.
+5. Arrays and Pointers:
+
+Explain the relationship between arrays and pointers in C.
+How do you pass arrays to functions in C?
+Describe the behavior of pointer arithmetic in C.
+What is the difference between static and dynamic memory allocation for arrays?
+Explain the purpose of multidimensional arrays in C.
+How do you implement dynamic arrays in C?
+Describe the use of pointer arrays and array pointers in C.
+Explain the concept of array of pointers in C.
+6. Functions and Modular Programming:
+
+Describe the significance of modular programming in C.
+How do you create and use header files in C?
+Explain the concept of function prototypes in C.
+Describe the purpose of the extern keyword in C.
+How do you handle recursion in modular programming?
+Explain the concept of function overloading in C.
+Describe the use of variadic functions in C.
+How do you create and use static functions in C?
+7. Memory Management:
+
+Explain the concept of memory leaks in C.
+Describe the behavior of dangling pointers in C.
+How do you prevent memory leaks in C?
+Explain the purpose of the realloc() function in C.
+Describe the use of memory pools in C.
+How do you implement garbage collection in C?
+8. Strings and Characters:
+
+Explain the behavior of string handling functions in C.
+Describe the use of character classification functions in C.
+How do you manipulate strings in C?
+Explain the purpose of the ctype.h header file in C.
+Describe the behavior of wide-character functions in C.
+How do you handle string formatting in C?
+Explain the concept of string literals in C.
+Describe the use of string manipulation functions in C.
+9. File Handling:
+
+How do you handle binary files in C?
+Explain the concept of text files in C.
+Describe the use of standard input and output streams in C.
+How do you handle file permissions in C?
+Explain the purpose of file buffering in C.
+Describe the behavior of file locking in C.
+How do you handle large files in C?
+Explain the purpose of the stdio.h header file in C.
+10. Advanced Concepts:
+
+Describe the concept of function templates in C.
+Explain the purpose of the restrict keyword in C.
+How do you handle memory fragmentation in C?
+Describe the use of shared memory in interprocess communication.
+Explain the concept of parallel programming in C.
+How do you implement thread synchronization in C?
+Describe the use of atomic operations in C.
+How do you handle memory alignment in C?
+Explain the purpose of the volatile qualifier in C.
+Describe the behavior of the attribute keyword in C.

@@ -1,0 +1,78 @@
+What is C programming language?
+Explain the structure of a C program.
+What is a variable in C?
+How do you declare and initialize a variable in C?
+Explain the different data types in C.
+What are constants in C?
+Explain the syntax of printf() function.
+Explain the syntax of scanf() function.
+What is a comment in C? How do you write comments in C?
+How do you include header files in C programs?
+What is the purpose of the main() function in C?
+How do you print "Hello, World!" in C?
+What is the difference between putchar() and printf() functions?
+Explain the use of escape sequences in C.
+How do you read input from the user in C?
+What are operators in C? Explain with examples.
+How do you use conditional statements in C? (if, else if, else)
+Explain the switch statement in C.
+What are loops in C? Explain the different types of loops.
+How do you use the while loop in C?
+Explain the do-while loop in C.
+How do you use the for loop in C?
+Explain the concept of arrays in C.
+How do you declare and initialize an array in C?
+What is the difference between an array and a pointer in C?
+How do you use functions in C? Explain with examples.
+What is the difference between call by value and call by reference?
+What are the storage classes in C? Explain each one.
+How do you use structures in C?
+What are pointers in C? Explain with examples.
+Explain the concept of dynamic memory allocation in C.
+What are the malloc() and calloc() functions? How are they different?
+How do you deallocate memory in C?
+Explain the concept of strings in C.
+What is a null-terminated string in C?
+Explain the concept of recursion in C.
+What is a pointer to a function in C? How do you declare and use it?
+Explain the concept of file handling in C.
+How do you open and close a file in C?
+What are the different file modes in C?
+How do you read from and write to a file in C?
+Explain the concept of binary file I/O in C.
+What are command-line arguments in C? How do you use them?
+Explain the concept of multi-dimensional arrays in C.
+How do you implement error handling in C programs?
+What are macros in C? How do you define and use them?
+Explain the purpose of the typedef keyword in C.
+What are enums in C? How do you use them?
+Explain the concept of bitwise operations in C.
+What is a bitwise shift operator? How do you use it?
+What are the advantages and disadvantages of using recursion in C?
+How do you reverse a string in C?
+What is the difference between the ++i and i++ operators in C?
+How do you find the length of a string in C?
+Explain the difference between strcpy() and strncpy() functions in C.
+How do you concatenate two strings in C?
+Explain the difference between pass by value and pass by reference in functions.
+How do you swap two variables without using a temporary variable in C?
+What is the difference between break and continue statements in C?
+How do you find the largest and smallest elements in an array in C?
+What is the difference between static and dynamic memory allocation in C?
+Explain the concept of function pointers in C with an example.
+How do you implement a stack using arrays in C?
+What is a structure in C? How do you pass a structure to a function?
+How do you implement a linked list in C?
+What is recursion? Write a recursive function to calculate factorial in C.
+Explain the concept of pointers to pointers in C.
+What are header files? How do you create your own header file in C?
+Explain the concept of function overloading in C.
+How do you implement operator overloading in C?
+What is a union in C? How is it different from a structure?
+Explain the concept of static variables in C.
+How do you implement exception handling in C?
+What is the purpose of the volatile keyword in C?
+Explain the difference between local and global variables in C.
+How do you implement a queue using linked lists in C?
+What is a doubly linked list? How do you implement it in C?
+How do you implement a priority queue in C?

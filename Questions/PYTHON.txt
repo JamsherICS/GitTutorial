@@ -1,0 +1,154 @@
+What is Python?
+Explain the difference between Python 2 and Python 3.
+How do you install Python on your system?
+What is PEP 8?
+What is a Python variable?
+How do you comment out multiple lines of code in Python?
+Explain the purpose of indentation in Python.
+What are the basic data types in Python?
+How do you declare and initialize a variable in Python?
+Explain the difference between lists and tuples in Python.
+How do you access elements in a list?
+What is a dictionary in Python?
+How do you define a function in Python?
+Explain the difference between '==' and 'is' operators in Python.
+What is a for loop in Python?
+How do you write an if statement in Python?
+Explain the purpose of the range() function in Python.
+What is a module in Python?
+How do you import a module in Python?
+What is a Python package?
+How do you handle exceptions in Python?
+What is a try-except block?
+Explain the purpose of the 'with' statement in Python.
+How do you read from a file in Python?
+How do you write to a file in Python?
+What is a class in Python?
+How do you create an object of a class in Python?
+What are methods in Python?
+Explain the purpose of inheritance in Python.
+How do you define a constructor in Python?
+What are the different types of method arguments in Python?
+How do you handle default arguments in Python functions?
+What is a lambda function in Python?
+Explain the purpose of the 'map()' function in Python.
+How do you sort a list in Python?
+What is list comprehension in Python?
+Explain the purpose of the 'filter()' function in Python.
+How do you reverse a string in Python?
+What is a set in Python?
+Explain the purpose of the 'del' keyword in Python.
+What is a tuple unpacking in Python?
+How do you check if a key exists in a dictionary?
+What is the difference between 'append()' and 'extend()' methods in Python lists?
+How do you convert a string to lowercase in Python?
+What is a generator in Python?
+Explain the purpose of the 'yield' keyword in Python.
+How do you create a virtual environment in Python?
+What is the purpose of the 'pass' statement in Python?
+How do you get the current date and time in Python?
+Explain the purpose of the 'enumerate()' function in Python.
+Intermediate-level:
+
+Explain the difference between shallow copy and deep copy in Python.
+How do you handle multiple exceptions in a single except block?
+What are decorators in Python?
+How do you create and use decorators in Python?
+Explain the purpose of the 'super()' function in Python.
+What are context managers in Python?
+How do you create a context manager in Python?
+What is a namespace in Python?
+Explain the purpose of the 'global' keyword in Python.
+What are list slicing and how do you use them?
+How do you iterate over multiple lists simultaneously in Python?
+Explain the purpose of the 'zip()' function in Python.
+What is a docstring in Python?
+How do you write multi-line docstrings in Python?
+What is the purpose of the 'assert' statement in Python?
+How do you debug Python code?
+Explain the purpose of the 'logging' module in Python.
+How do you use logging in Python?
+What are regular expressions in Python?
+How do you use regular expressions in Python?
+Explain the purpose of the 're' module in Python.
+How do you work with JSON data in Python?
+What are iterators and iterables in Python?
+How do you create custom iterators in Python?
+Explain the purpose of the 'next()' function in Python iterators.
+What are generators in Python?
+How do you create and use generators in Python?
+Explain the purpose of the 'yield from' statement in Python generators.
+What is a decorator factory in Python?
+How do you create a decorator factory in Python?
+Explain the purpose of the 'functools' module in Python.
+How do you use functools in Python?
+What are closures in Python?
+How do you create and use closures in Python?
+Explain the purpose of the 'nonlocal' keyword in Python.
+How do you handle command-line arguments in Python scripts?
+What are command-line arguments in Python?
+How do you parse command-line arguments in Python?
+Explain the purpose of the 'argparse' module in Python.
+How do you use argparse in Python?
+What is the purpose of the 'collections' module in Python?
+How do you use named tuples in Python?
+What is the purpose of the 'defaultdict' class in Python?
+How do you use defaultdict in Python?
+Explain the purpose of the 'Counter' class in Python.
+How do you use Counter in Python?
+What are sets and frozen sets in Python?
+How do you use sets and frozen sets in Python?
+Explain the purpose of the 'heapq' module in Python.
+How do you use heapq in Python?
+Advanced-level:
+
+What are metaclasses in Python?
+How do you create and use metaclasses in Python?
+Explain the purpose of the 'inspect' module in Python.
+How do you use the 'inspect' module in Python?
+What are descriptors in Python?
+How do you create and use descriptors in Python?
+Explain the purpose of the 'asyncio' module in Python.
+How do you work with asynchronous I/O in Python using asyncio?
+What are context variables in Python?
+How do you work with context variables in Python?
+Explain the purpose of the 'dataclasses' module in Python.
+How do you use dataclasses in Python?
+What is type hinting in Python?
+How do you use type hinting in Python?
+Explain the purpose of the 'typing' module in Python.
+How do you use the typing module in Python?
+What are abstract base classes (ABCs) in Python?
+How do you create and use abstract base classes in Python?
+Explain the purpose of the 'async' and 'await' keywords in Python.
+How do you work with asynchronous programming in Python using 'async' and 'await'?
+What are coroutines in Python?
+How do you create and use coroutines in Python?
+Explain the purpose of the 'concurrent.futures' module in Python.
+How do you use concurrent
+What is monkey patching in Python?
+How do you perform monkey patching in Python?
+Explain the purpose of the __getattr__() and __setattr__() methods in Python.
+How do you use __getattr__() and __setattr__() methods in Python?
+What are metaprogramming and reflection in Python?
+How do you implement metaprogramming and reflection in Python?
+Explain the purpose of the functools.wraps() function in Python.
+How do you use functools.wraps() in Python?
+What is the purpose of the exec() and eval() functions in Python?
+How do you use exec() and eval() in Python?
+Explain the purpose of the subprocess module in Python.
+How do you use the subprocess module in Python?
+What is method resolution order (MRO) in Python?
+How does Python determine the method resolution order?
+Explain the purpose of the __slots__ attribute in Python.
+How do you use the __slots__ attribute in Python?
+What is method overloading in Python?
+How do you achieve method overloading in Python?
+Explain the purpose of the multiprocessing module in Python.
+How do you use the multiprocessing module in Python?
+What is the GIL (Global Interpreter Lock) in Python?
+How does the GIL impact Python multithreading?
+Explain the purpose of the pickle module in Python.
+How do you use the pickle module for object serialization?
+What are context variables in Python 3.7+?
+How do you work with context variables in Python 3.7+?

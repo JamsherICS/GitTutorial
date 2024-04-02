@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structure of a C Program</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    strong {
+      color: #dc3545;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3><strong>A typical structure of a C program consists of the following elements:</strong></h3>
+
+    <p><strong>Preprocessor Directives:</strong> These lines start with a hash symbol (#) and are processed by the preprocessor before actual compilation. They are used for including header files and defining macros.</p>
+
+    <p><strong>Function Prototypes:</strong> Declarations of functions used in the program. It informs the compiler about the function's name, return type, and parameters.</p>
+
+    <p><strong>Main Function:</strong> The entry point of the program where execution begins. It returns an integer value indicating the program's exit status.</p>
+
+    <p><strong>Variable Declarations:</strong> Declarations of variables used in the program. Variables must be declared before they are used.</p>
+
+    <p><strong>Statements:</strong> Actual executable statements that perform tasks within the program.</p>
+
+    <p><strong>Function Calls:</strong> Invocations of functions declared or defined within the program.</p>
+
+    <p><strong>Function Definitions:</strong> Definitions of functions declared earlier in the program. They contain the actual implementation of the functions.</p>
+
+    <div class="code">
+      <pre><code>
+<span class="comment">// Preprocessor Directives</span>
+<span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="comment">// Function Prototypes</span>
+<span class="keyword">void</span> <span class="function">myFunction</span>();
+
+<span class="comment">// Main Function</span>
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="comment">// Variable Declarations</span>
+
+    <span class="comment">// Statements</span>
+
+    <span class="comment">// Function Calls</span>
+    <span class="function">myFunction</span>();
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}
+
+<span class="comment">// Function Definitions</span>
+<span class="keyword">void</span> <span class="function">myFunction</span>() {
+    <span class="comment">// Function Body</span>
+}
+      </code></pre>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+</body>
+</html>
