@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>If-Else Statements in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+      font-weight: bold;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p><strong><span class="keyword">1. if statement:</span></strong></p>
+    <p>It is used to execute a block of code if a specified condition is true.</p>
+
+    <p><strong><span class="keyword">2. else if statement:</span></strong></p>
+    <p>It is used to specify a new condition to test, if the first condition is false.</p>
+
+    <p><strong><span class="keyword">3. else statement:</span></strong></p>
+    <p>It is used to execute a block of code if the condition of the if statement and all else if statements are false.</p>
+   
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">num</span> = <span class="var">-5;</span>
+
+    <span class="comment">// Check if 'num' is greater than 0</span>
+    <span class="keyword">if</span> (<span class="var">num</span> &gt; <span class="var">0</span>) {
+        <span class="function">printf</span>(<span class="var">"%d is positive.\n",</span> <span class="var">num</span>);
+    } 
+    <span class="comment">// If 'num' is not greater than 0, check if it's less than 0</span>
+    <span class="keyword">else if</span> (<span class="var">num</span> &lt; <span class="var">0</span>) {
+        <span class="function">printf</span>(<span class="var">"%d is negative.\n",</span> <span class="var">num</span>);
+    } 
+    <span class="comment">// If 'num' is neither greater than 0 nor less than 0, it must be equal to 0</span>
+    <span class="keyword">else</span> {
+        <span class="function">printf</span>(<span class="var">"%d is zero.\n",</span> <span class="var">num</span>);
+    }
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p><strong>In this code:</strong><br>We declare and initialize a variable <span class="var">num</span> with the value <span class="var">-5</span>. We use <span class="keyword">if</span>, <span class="keyword">else if</span>, and <span class="keyword">else</span> statements to check different conditions. If <span class="var">num</span> is greater than 0, we print that it is positive. If <span class="var">num</span> is less than 0, we print that it is negative. If neither of the above conditions is true, we print that <span class="var">num</span> is zero.</p>
+
+  </div>
+
+</body>
+</html>

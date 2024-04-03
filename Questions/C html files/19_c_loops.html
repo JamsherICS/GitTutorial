@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loops in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+      font-weight: bold;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p><strong>1. for loop:</strong></p>
+    <p>The for loop is used when the number of iterations is known beforehand. It consists of three parts: initialization, condition, and update. The loop iterates as long as the condition is true.</p>
+
+    <p><strong>Syntax:</strong></p>
+    <div class="code">
+      <pre><code><span class="keyword">for</span> (<span class="var">initialization;</span> <span class="var">condition;</span> <span class="var">update</span>) {
+    <span class="comment">// code block to be executed</span>
+}</code></pre>
+    </div>
+
+    <p><strong>2. while loop:</strong></p>
+    <p>The while loop is used when the number of iterations is not known beforehand, and the loop continues as long as a specified condition is true. It evaluates the condition before executing the loop body.</p>
+
+    <p><strong>Syntax:</strong></p>
+    <div class="code">
+      <pre><code><span class="keyword">while</span> (<span class="var">condition</span>) {
+    <span class="comment">// code block to be executed</span>
+}</code></pre>
+    </div>
+
+    <p><strong>3. do-while loop:</strong></p>
+    <p>The do-while loop is similar to the while loop, but it evaluates the condition after executing the loop body. This guarantees that the loop body is executed at least once, even if the condition is false initially.</p>
+
+    <p><strong>Syntax:</strong></p>
+    <div class="code">
+      <pre><code><span class="keyword">do</span> {
+    <span class="comment">// code block to be executed</span>
+} <span class="keyword">while</span> (<span class="var">condition</span>);</code></pre>
+    </div>
+
+    <p><strong>Important points:</strong></p>
+    <ul>
+      <li>The <span class="keyword">for loop</span> is commonly used when the number of iterations is known and requires initialization, condition, and update logic in one place.</li>
+      <li>The <span class="keyword">while loop</span> is used when the number of iterations is not known beforehand and relies solely on a condition.</li>
+      <li>The <span class="keyword">do-while loop</span> is useful when you want to execute the loop body at least once, regardless of the initial condition.</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>

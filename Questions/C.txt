@@ -17,9 +17,9 @@ What are operators in C? Explain with examples.
 How do you use conditional statements in C? (if, else if, else)
 Explain the switch statement in C.
 What are loops in C? Explain the different types of loops.
+How do you use the for loop in C?
 How do you use the while loop in C?
 Explain the do-while loop in C.
-How do you use the for loop in C?
 Explain the concept of arrays in C.
 How do you declare and initialize an array in C?
 What is the difference between an array and a pointer in C?

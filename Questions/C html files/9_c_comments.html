@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comments in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <p>A <strong>Comment</strong> in C is a piece of text that is ignored by the compiler. It is used to add explanatory notes, documentation, or temporarily disable code without affecting the program's functionality. Comments improve code readability and maintainability.</p>
+
+    <p>In C, there are two ways to write comments:</p>
+
+    <ol>
+      <li><strong>Single-line comments:</strong> These comments start with <span class="var">//</span> and continue until the end of the line. They are used for brief comments or annotations.</li>
+      <div class="code">
+        <pre><code>
+<span class="comment">// This is a single-line comment</span>
+<span class="keyword">int</span> num = 10; <span class="comment">// Variable declaration</span>
+        </code></pre>
+      </div><br>
+      <li><strong>Multi-line comments:</strong> These comments start with <span class="var">/*</span> and end with <span class="var">*/</span>. They can span multiple lines and are used for longer comments or comment blocks.</li>
+      <div class="code">
+        <pre><code>
+<span class="comment">/*
+This is a multi-line comment
+It can span multiple lines
+*/</span>
+        </code></pre>
+      </div>
+    </ol>
+
+    <p>Comments are essential for code documentation and communication between programmers, making the code easier to understand and maintain.</p>
+
+  </div>
+
+</body>
+</html>

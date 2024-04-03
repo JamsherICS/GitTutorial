@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Loop in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+      font-weight: bold;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>The <span class="keyword">for loop</span> is used to execute a block of code repeatedly for a specified number of times. It is often used when the number of iterations is known beforehand.</p>
+
+    <p><strong>Syntax:</strong></p>
+    <div class="code">
+      <pre><code><span class="keyword">for</span> (<span class="var">initialization;</span> <span class="var">condition;</span> <span class="var">update</span>) {
+    <span class="comment">// code block to be executed</span>
+}</code></pre>
+    </div>
+
+    <p><strong>Initialization:</strong> It is an expression used to initialize the loop control variable before the loop starts. This part is executed only once at the beginning of the loop.</p>
+    <p><strong>Condition:</strong> It is a Boolean expression that is evaluated before each iteration. If the condition evaluates to true, the loop continues executing. If it evaluates to false, the loop terminates.</p>
+    <p><strong>Update:</strong> It is an expression used to update the loop control variable after each iteration. It typically increments or decrements the variable to control the loop's behavior.</p>
+<br>
+    <p><strong>Here's an example of using a for loop to print numbers from 1 to 5:</strong></p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">i;</span> <span class="comment">// Loop control variable</span>
+
+    <span class="comment">// Loop to print numbers from 1 to 5</span>
+    <span class="keyword">for</span> (<span class="var">i = 1;</span> <span class="var">i <= 5;</span> <span class="var">i++</span>) {
+        <span class="function">printf</span>(<span class="var">"%d ",</span> <span class="var">i</span>); <span class="comment">// Print the current value of i</span>
+    }
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p><strong>Output:</strong> 1 2 3 4 5</p>
+
+    <p><strong>In this example:</strong></p>
+    <ul>
+      <li>i is initialized to 1 before the loop (<span class="var">int i = 1;</span>).</li>
+      <li>The loop continues as long as i is less than or equal to 5 (<span class="var">i <= 5;</span>).</li>
+      <li>After each iteration, the value of i is incremented by 1 (<span class="var">i++</span>).</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>

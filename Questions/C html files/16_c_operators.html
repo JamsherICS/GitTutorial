@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operators in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h3><strong>Operators in C</strong></h3>
+
+    <p><strong>1. Arithmetic Operators</strong></p>
+    <p>Arithmetic operators are used to perform mathematical operations like addition, subtraction, multiplication, division, and modulus.</p>
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="var">int</span> <span class="var">a</span> = <span class="var">10</span>, <span class="var">b</span> = <span class="var">5</span>;
+    <span class="var">int</span> <span class="var">sum</span> = <span class="var">a</span> + <span class="var">b</span>;       <span class="comment">// Addition</span>
+    <span class="var">int</span> <span class="var">difference</span> = <span class="var">a</span> - <span class="var">b</span>;  <span class="comment">// Subtraction</span>
+    <span class="var">int</span> <span class="var">product</span> = <span class="var">a</span> * <span class="var">b</span>;    <span class="comment">// Multiplication</span>
+    <span class="var">int</span> <span class="var">quotient</span> = <span class="var">a</span> / <span class="var">b</span>;   <span class="comment">// Division</span>
+    <span class="var">int</span> <span class="var">remainder</span> = <span class="var">a</span> % <span class="var">b</span>;  <span class="comment">// Modulus (Remainder)</span>
+    
+    <span class="function">printf</span>(<span class="var">"Sum: %d\n",</span> <span class="var">sum</span>);               <span class="comment">// Output: Sum: 15</span>
+    <span class="function">printf</span>(<span class="var">"Difference: %d\n",</span> <span class="var">difference</span>); <span class="comment">// Output: Difference: 5</span>
+    <span class="function">printf</span>(<span class="var">"Product: %d\n",</span> <span class="var">product</span>);       <span class="comment">// Output: Product: 50</span>
+    <span class="function">printf</span>(<span class="var">"Quotient: %d\n",</span> <span class="var">quotient</span>);     <span class="comment">// Output: Quotient: 2</span>
+    <span class="function">printf</span>(<span class="var">"Remainder: %d\n",</span> <span class="var">remainder</span>);   <span class="comment">// Output: Remainder: 0</span>
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div><br>
+
+    <p><strong>2. Assignment Operators</strong></p>
+    <p>Assignment operators are used to assign values to variables.</p>
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="var">int</span> <span class="var">a</span> = <span class="var">10</span>;
+    <span class="var">int</span> <span class="var">b</span>;
+    
+    <span class="comment">// Assignment</span>
+    <span class="var">b</span> = <span class="var">a</span>;
+    
+    <span class="function">printf</span>(<span class="var">"Value of b: %d\n",</span> <span class="var">b</span>);  <span class="comment">// Output: Value of b: 10</span>
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div><br>
+
+    <p><strong>3. Comparison Operators</strong></p>
+    <p>Comparison operators are used to compare two values. They return true (1) if the comparison is true, and false (0) otherwise.</p>
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="var">int</span> <span class="var">a</span> = <span class="var">10</span>, <span class="var">b</span> = <span class="var">20</span>;
+    
+    <span class="comment">// Comparison</span>
+    <span class="function">printf</span>(<span class="var">"a == b: %d\n",</span> <span class="var">a</span> == <span class="var">b</span>);  <span class="comment">// Output: a == b: 0 (False)</span>
+    <span class="function">printf</span>(<span class="var">"a != b: %d\n",</span> <span class="var">a</span> != <span class="var">b</span>);  <span class="comment">// Output: a != b: 1 (True)</span>
+    <span class="function">printf</span>(<span class="var">"a &lt; b: %d\n",</span> <span class="var">a</span> &lt; <span class="var">b</span>);    <span class="comment">// Output: a &lt; b: 1 (True)</span>
+    <span class="function">printf</span>(<span class="var">"a &gt; b: %d\n",</span> <span class="var">a</span> &gt; <span class="var">b</span>);    <span class="comment">// Output: a &gt; b: 0 (False)</span>
+    <span class="function">printf</span>(<span class="var">"a &lt;= b: %d\n",</span> <span class="var">a</span> &lt;= <span class="var">b</span>);  <span class="comment">// Output: a &lt;= b: 1 (True)</span>
+    <span class="function">printf</span>(<span class="var">"a &gt;= b: %d\n",</span> <span class="var">a</span> &gt;= <span class="var">b</span>);  <span class="comment">// Output: a &gt;= b: 0 (False)</span>
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div><br>
+
+    <p><strong>4. Logical Operators</strong></p>
+    <p>Logical operators are used to perform logical operations such as AND, OR, and NOT.</p>
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="var">int</span> <span class="var">a</span> = <span class="var">1</span>, <span class="var">b</span> = <span class="var">0</span>;
+    
+    <span class="comment">// Logical AND</span>
+    <span class="function">printf</span>(<span class="var">"a &amp;&amp; b: %d\n",</span> <span class="var">a</span> &amp;&amp; <span class="var">b</span>);  <span class="comment">// Output: a &amp;&amp; b: 0 (False)</span>
+    
+    <span class="comment">// Logical OR</span>
+    <span class="function">printf</span>(<span class="var">"a || b: %d\n",</span> <span class="var">a</span> || <span class="var">b</span>);  <span class="comment">// Output: a || b: 1 (True)</span>
+    
+    <span class="comment">// Logical NOT</span>
+    <span class="function">printf</span>(<span class="var">"!a: %d\n",</span> !<span class="var">a</span>);          <span class="comment">// Output: !a: 0 (False)</span>
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+  </div>
+
+</body>
+</html>

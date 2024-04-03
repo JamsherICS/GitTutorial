@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>While Loop in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+      font-weight: bold;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>The <span class="keyword">while loop</span> is used to execute a block of code repeatedly as long as a specified condition is true.</p>
+
+    <p><strong>Syntax:</strong></p>
+    <div class="code">
+      <pre><code><span class="keyword">while</span> (<span class="var">condition</span>) {
+    <span class="comment">// code block to be executed</span>
+}</code></pre>
+    </div>
+
+    <p>The <span class="var">condition</span> is a Boolean expression that is evaluated before each iteration of the loop. If the condition evaluates to true, the code block inside the loop is executed. After each iteration, the condition is checked again, and if it still evaluates to true, the loop continues.</p>
+<br>
+    <p><strong>Here's an example of using a while loop to print numbers from 1 to 5:</strong></p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">i</span> = <span class="var">1;</span> <span class="comment">// initialize the loop control variable</span>
+
+    <span class="comment">// while loop to print numbers from 1 to 5</span>
+    <span class="keyword">while</span> (<span class="var">i</span> &lt;= <span class="var">5</span>) {
+        <span class="function">printf</span>(<span class="var">"%d\n",</span> <span class="var">i</span>); <span class="comment">// print the current value of i</span>
+        <span class="var">i++;</span> <span class="comment">// increment i for the next iteration</span>
+    }
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p><strong>In this example:</strong><br>The loop control variable <span class="var">i</span> is initialized to <span class="var">1</span>. The while loop checks if <span class="var">i</span> is less than or equal to <span class="var">5</span>. If true, it executes the code block inside the loop, which prints the current value of <span class="var">i</span> and then increments <span class="var">i</span> for the next iteration. The loop continues until <span class="var">i</span> becomes greater than <span class="var">5</span>.</p>
+
+  </div>
+
+</body>
+</html>

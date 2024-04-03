@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Input in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+      font-weight: bold;
+    }
+    .var {
+      color: #61a6ff;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p><span class="keyword">Input</span> can be read from the user in C using the <span class="var">scanf()</span> function for formatted input or the <span class="var">gets()</span> or <span class="var">fgets()</span> functions for reading strings.</p>
+
+    <p>The <span class="var">scanf()</span> function is used to read input from the <span class="keyword">standard input device</span> (typically the keyboard) based on a specified <span class="keyword">format string</span>. It takes the <span class="keyword">address</span> of <span class="keyword">variables</span> where the input will be stored as arguments.</p>
+
+    <p><b>Using <span class="var">scanf()</span> function for simple input like numbers.</b></p>
+
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">num;</span>
+    <span class="function">printf</span>(<span class="var">"Enter a number: "</span>);
+    <span class="function">scanf</span>(<span class="var">"%d",</span> <span class="keyword">&amp;</span><span class="var">num</span>);  <span class="comment">// Reads an integer input from the user</span>
+    <span class="function">printf</span>(<span class="var">"You entered: %d\n",</span> <span class="var">num</span>);
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div><br>
+
+    <p><b>Using <span class="var">fgets()</span> function for reading strings, including spaces.</b></p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">char</span> <span class="var">name[50];</span>
+    <span class="function">printf</span>(<span class="var">"Enter your name: "</span>);
+    <span class="function">fgets</span>(<span class="var">name,</span> <span class="keyword">sizeof</span>(<span class="var">name),</span> <span class="var">stdin</span>);  <span class="comment">// Reads a string input from the user</span>
+    <span class="function">printf</span>(<span class="var">"Hello, %s\n",</span> <span class="var">name</span>);
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p><strong>For example, </strong><span class="var">scanf("%d", &num);</span> reads an integer input from the user and stores it in the <span class="keyword">variable</span> <span class="var">num</span>. The <span class="var">gets()</span> function reads a line of text from the <span class="keyword">standard input</span> and stores it as a <span class="keyword">string</span>, but it is not recommended to use due to security vulnerabilities. The <span class="var">fgets()</span> function is safer and is typically preferred for reading strings.</p>
+
+  </div>
+
+</body>
+</html>

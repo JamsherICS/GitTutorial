@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main Function in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>The <strong>main()</strong> function serves as the entry point of a C program. It is the starting point of program execution. When a C program is executed, the operating system calls the <strong>main()</strong> function first. The program's execution begins from the first statement inside the <strong>main()</strong> function and continues sequentially.</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="comment">// Program starts execution from here</span>
+    <span class="function">printf</span>(<span class="var">"Hello, World!\n"</span>); <span class="comment">// Print "Hello, World!"</span>
+    <span class="keyword">return</span> <span class="var">0</span>; <span class="comment">// Return 0 to indicate successful program execution</span>
+}</code></pre>
+    </div>
+
+    <p><strong>int main():</strong> This is the declaration of the <strong>main()</strong> function, which returns an integer value (<strong>int</strong>). It does not accept any arguments.</p>
+
+    <p>In C, <strong>main()</strong> should return an integer value, typically 0 to indicate successful execution.</p>
+
+  </div>
+
+</body>
+</html>

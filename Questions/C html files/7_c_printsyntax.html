@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>printf() Function in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <p>The <strong>printf()</strong> function in C is used to print formatted output to the standard output device, typically the console. Its syntax is as follows:</p>
+
+    <div class="code">
+      <pre><code>
+<span class="comment">// printf() function syntax</span>
+<span class="keyword">printf</span>(<span class="var">"format_string"</span>, arg1, arg2, ...);
+      </code></pre>
+    </div>
+
+    <p><strong>format_string:</strong> A string that specifies the format of the output. It may contain format specifiers like <span class="var">%d</span>, <span class="var">%f</span>, <span class="var">%s</span>, etc., which are replaced by the corresponding arguments.</p>
+
+    <p><strong>arg1, arg2, ...:</strong> Arguments to be formatted and inserted into the format string. They must match the format specifiers in the format string.</p>
+
+    <div class="code">
+      <pre><code>
+<span class="comment">// Example usage of printf()</span>
+<span class="keyword">int</span> num = 10;
+<span class="keyword">printf</span>(<span class="var">"The value of num is: %d\n"</span>, num);
+      </code></pre>
+    </div>
+
+    <p>This will print: <strong>The value of num is: 10</strong></p>
+
+  </div>
+
+</body>
+</html>
