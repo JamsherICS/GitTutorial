@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Handling in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>File handling in C involves working with files to perform various input/output operations. It allows you to read data from files, write data to files, create new files, and modify existing files.</p>
+
+    <p>The key components of file handling in C include:</p>
+
+    <ul>
+        <li><strong>File Pointers:</strong> In C, file operations are performed using file pointers, which are variables that hold the memory address of a file stream. The FILE data type is used to declare file pointers. File pointers are essential for performing operations such as opening files, reading from files, writing to files, and closing files.</li>
+        
+        <li><strong>Opening Files:</strong> Before performing any operation on a file, it needs to be opened. The fopen() function is used to open files in C. It takes two arguments: the file path and the mode in which the file is to be opened (e.g., read, write, append). If the file does not exist, fopen() can create a new file.</li>
+        
+        <li><strong>Reading from Files:</strong> Once a file is opened for reading, data can be read from the file using functions such as fscanf(), fgets(), or fread(). These functions read data from the file and store it in variables or buffers for further processing.</li>
+        
+        <li><strong>Writing to Files:</strong> When a file is opened for writing, data can be written to the file using functions such as fprintf(), fputs(), or fwrite(). These functions allow writing data to the file from variables or buffers.</li>
+        
+        <li><strong>Closing Files:</strong> After performing operations on a file, it should be closed using the fclose() function. Closing a file releases the resources associated with it and ensures that all data is properly written to the file.</li>
+    </ul>
+
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="comment">// Example of file handling in C</span>
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">FILE</span> <span class="var">*filePtr</span>;
+    <span class="var">filePtr</span> = <span class="function">fopen</span>(<span class="var">"example.txt"</span>, <span class="var">"w"</span>);  <span class="comment">// Open file in write mode</span>
+    <span class="function">fprintf</span>(<span class="var">filePtr</span>, <span class="var">"Hello, World!\n"</span>);  <span class="comment">// Write data to file</span>
+    <span class="function">fclose</span>(<span class="var">filePtr</span>);  <span class="comment">// Close file</span>
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, we use the <span class="keyword">FILE</span> pointer and functions like <span class="function">fopen</span>, <span class="function">fprintf</span>, and <span class="function">fclose</span> to create a new file named "example.txt", write "Hello, World!" to it, and then close the file.</p>
+
+  </div>
+
+</body>
+</html>

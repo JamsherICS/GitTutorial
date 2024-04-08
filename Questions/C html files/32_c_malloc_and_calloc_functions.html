@@ -1,0 +1,126 @@
+<?php echo '<!DOCTYPE html>'; ?>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Handling in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+<?php echo '<div class="container">'; ?>
+
+    <p>In C, you can open and close a file using the <code>fopen()</code> and <code>fclose()</code> functions, respectively.</p>
+
+    <h3>Opening a File:</h3>
+    <p>To open a file, you use the <code>fopen()</code> function, which takes two arguments:</p>
+    <ul>
+      <li>The file path: A string containing the path to the file you want to open.</li>
+      <li>The mode: A string indicating the mode in which you want to open the file (e.g., read, write, append).</li>
+    </ul>
+    <p>The syntax for <code>fopen()</code> is as follows:</p>
+
+    <div class="code">
+      <xmp>FILE *fptr;
+fptr = fopen("file_path", "mode");</xmp>
+    </div>
+
+    <p>For example:</p>
+
+    <div class="code">
+      <xmp>FILE *filePointer;
+filePointer = fopen("example.txt", "w");</xmp>
+    </div>
+
+    <h3>Closing a File:</h3>
+    <p>After you have finished working with a file, it's important to close it using the <code>fclose()</code> function. This function takes one argument: the file pointer that was returned by <code>fopen()</code>.</p>
+    <p>The syntax for <code>fclose()</code> is simple:</p>
+
+    <div class="code">
+      <xmp>fclose(filePointer);</xmp>
+    </div>
+
+    <p>It's good practice to close files after you're done using them to release system resources and ensure data integrity.</p>
+
+    <h3>Complete Example:</h3>
+
+    <div class="code">
+      <xmp>#include &lt;stdio.h&gt;
+
+int main() {
+    FILE *filePointer;
+
+    // Open a file named "example.txt" for writing
+    filePointer = fopen("example.txt", "w");
+
+    // Check if file opened successfully
+    if (filePointer == NULL) {
+        printf("Error opening file!\n");
+        return 1; // Return an error code
+    }
+
+    printf("File opened successfully!\n");
+
+    // Close the file
+    fclose(filePointer);
+
+    printf("File closed.\n");
+
+    return 0; // Return success
+}</xmp>
+    </div>
+
+    <p>In this example:</p>
+    <ul>
+      <li>We open a file named "example.txt" for writing using <code>fopen()</code> with mode "w".</li>
+      <li>We check if the file was opened successfully and print a message accordingly.</li>
+      <li>We close the file using <code>fclose()</code>.</li>
+      <li>We print a message indicating that the file has been closed.</li>
+      <li>Finally, we return 0 to indicate success.</li>
+    </ul>
+
+<?php echo '</div>'; ?>
+
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointers in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>A pointer in C is a variable that stores the memory address of another variable. Pointers are powerful features of C that allow for dynamic memory allocation, passing of addresses instead of values, and working with complex data structures.</p>
+
+    <p>Here's how you declare a pointer variable:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">data_type</span> *<span class="var">pointer_name;</span></code></pre>
+    </div>
+
+    <p>Here's an example of declaring and using pointers:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">int</span> <span class="var">number</span> = <span class="var">10;</span>
+<span class="keyword">int</span> *<span class="var">ptr;</span>  <span class="comment">// Declare a pointer to an integer</span>
+
+<span class="var">ptr</span> = &<span class="var">number;</span>  <span class="comment">// Assign the address of 'number' to the pointer</span>
+
+<span class="keyword">printf</span>(<span class="var">"Address of number variable: %p\n",</span> <span class="var">ptr</span>);  <span class="comment">// Print the address stored in the pointer</span>
+<span class="keyword">printf</span>(<span class="var">"Value of number variable: %d\n",</span> *<span class="var">ptr</span>);  <span class="comment">// Print the value pointed to by the pointer</span></code></pre>
+    </div>
+
+    <p>In this example:</p>
+    <ul>
+      <li>We declare an integer variable <span class="var">number</span> and initialize it to <span class="var">10</span>.</li>
+      <li>We declare a pointer variable <span class="var">ptr</span> to an integer.</li>
+      <li>We assign the address of the <span class="var">number</span> variable to the pointer using the <span class="keyword">&</span> (address-of) operator.</li>
+      <li>We print the address stored in the pointer using the <span class="var">%p</span> format specifier.</li>
+      <li>We print the value pointed to by the pointer using the <span class="var">%d</span> format specifier and the <span class="keyword">*</span> (dereference) operator.</li>
+    </ul>
+
+  </div>
+
+</body>
+</html>

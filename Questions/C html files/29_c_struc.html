@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Structures in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>A structure in C is a user-defined data type that allows you to group together different types of variables under a single name. Each variable within a structure is called a member or field. Structures are useful for organizing related data in a program.</p>
+
+    <p>Here's the general syntax for defining a structure:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">struct</span> <span class="var">structure_name</span> {
+    <span class="var">data_type1</span> <span class="var">member1</span>;
+    <span class="var">data_type2</span> <span class="var">member2</span>;
+    ...
+};</code></pre>
+    </div>
+
+    <p>Once a structure is defined, you can declare variables of that type and access its members using the dot (.) operator. Here's an example:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">struct</span> <span class="var">Person</span> {
+    <span class="var">char</span> <span class="var">name[50];</span>
+    <span class="var">int</span> <span class="var">age;</span>
+};
+
+<span class="comment">// Declare a variable of type Person</span>
+<span class="keyword">struct</span> <span class="var">Person</span> <span class="var">person1;</span>
+
+<span class="comment">// Access and modify structure members</span>
+<span class="var">strcpy</span>(<span class="var">person1.name,</span> <span class="var">"John");</span>
+<span class="var">person1.age</span> = <span class="var">30;</span></code></pre>
+    </div>
+
+    <p>In this example, we define a structure <span class="var">Person</span> with two members: <span class="var">name</span> and <span class="var">age</span>. We then declare a variable <span class="var">person1</span> of type <span class="var">Person</span> and access its members to assign values.</p>
+
+  </div>
+
+</body>
+</html>

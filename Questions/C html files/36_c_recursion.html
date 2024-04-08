@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recursion in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>Recursion is a programming technique where a function calls itself in order to solve a problem. It's particularly useful for solving problems that can be broken down into smaller, similar subproblems.</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="comment">// Example of a recursive function to calculate factorial</span>
+<span class="keyword">int</span> <span class="function">factorial</span>(<span class="keyword">int</span> <span class="var">n</span>) {
+    <span class="comment">// Base case: If n is 0 or 1, return 1</span>
+    <span class="keyword">if</span> (<span class="var">n</span> == <span class="var">0</span> || <span class="var">n</span> == <span class="var">1</span>) {
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="comment">// Recursive case: Return n * factorial of (n - 1)</span>
+    <span class="keyword">else</span> {
+        <span class="keyword">return</span> <span class="var">n</span> * <span class="function">factorial</span>(<span class="var">n</span> - <span class="var">1</span>);
+    }
+}
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">n</span> = <span class="var">5</span>;
+    <span class="comment">// Calculate factorial of 5 using recursion</span>
+    <span class="keyword">int</span> <span class="var">result</span> = <span class="function">factorial</span>(<span class="var">n</span>);
+    <span class="function">printf</span>(<span class="var">"Factorial of %d is %d\n",</span> <span class="var">n</span>, <span class="var">result</span>);
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, the <span class="function">factorial</span> function is defined recursively to calculate the factorial of a non-negative integer <span class="var">n</span>. The function calls itself with a smaller value of <span class="var">n</span> until it reaches the base case where <span class="var">n</span> is 0 or 1.</p>
+
+  </div>
+
+</body>
+</html>

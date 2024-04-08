@@ -48,8 +48,6 @@ How do you create a virtual environment in Python?
 What is the purpose of the 'pass' statement in Python?
 How do you get the current date and time in Python?
 Explain the purpose of the 'enumerate()' function in Python.
-Intermediate-level:
-
 Explain the difference between shallow copy and deep copy in Python.
 How do you handle multiple exceptions in a single except block?
 What are decorators in Python?
@@ -100,8 +98,6 @@ What are sets and frozen sets in Python?
 How do you use sets and frozen sets in Python?
 Explain the purpose of the 'heapq' module in Python.
 How do you use heapq in Python?
-Advanced-level:
-
 What are metaclasses in Python?
 How do you create and use metaclasses in Python?
 Explain the purpose of the 'inspect' module in Python.

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Deallocating Memory in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>Memory allocated dynamically using <span class="keyword">malloc()</span>, <span class="keyword">calloc()</span>, or <span class="keyword">realloc()</span> in C should be deallocated to prevent memory leaks. The <span class="keyword">free()</span> function is used to deallocate the memory previously allocated by these functions.</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdlib.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> *<span class="var">ptr</span>;
+
+    <span class="comment">// Allocate memory using malloc()</span>
+    <span class="var">ptr</span> = (<span class="keyword">int</span> *)<span class="keyword">malloc</span>(<span class="var">5</span> * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));
+
+    <span class="comment">// Check if memory allocation is successful</span>
+    <span class="keyword">if</span> (<span class="var">ptr</span> == <span class="keyword">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Memory allocation failed\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+
+    <span class="comment">// Use the allocated memory</span>
+
+    <span class="comment">// Deallocate memory using free()</span>
+    <span class="keyword">free</span>(<span class="var">ptr</span>);
+    <span class="var">ptr</span> = <span class="keyword">NULL</span>; <span class="comment">// Optional: Set pointer to NULL after deallocation</span>
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, memory is allocated using <span class="keyword">malloc()</span> and then deallocated using <span class="keyword">free()</span>. It's good practice to set the pointer to <span class="keyword">NULL</span> after deallocation to avoid accessing deallocated memory.</p>
+
+  </div>
+
+</body>
+</html>

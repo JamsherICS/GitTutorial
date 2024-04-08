@@ -11,7 +11,6 @@ What gives Java its 'write once and run anywhere' nature?
 What is classloader?
 Is Empty .java file name a valid source file name?
 Is delete, next, main, exit or null keyword in java?
-If I don't provide any arguments on the command line, then what will the value stored in the String array passed into the main() method, empty or NULL?
 What if I write static public void instead of public static void?
 What is the default value of the local variables?
 What are the various access specifiers in Java?
@@ -442,6 +441,16 @@ What is the JDBC Rowset?
 What is the major difference between java.util.Date and java.sql.Date data types?
 What does the JDBC setMaxRows method do?
 
+Differentiate between Iterable and Iterator.
+Differentiate between List and Set.
+Differentiate between List and Map.
+Differentiate between Queue and Stack.
+Differentiate between PriorityQueue and TreeSet.
+Differentiate between Singly Linked List and Doubly Linked List.
+Differentiate between Failfast and Failsafe.
+Differentiate between HashMap and TreeMap.
+Differentiate between Queue and Deque.
+Differentiate between HashSet and TreeSet.
 
 ----------------------------------------------------------------------
 ----------------------------------------------------------------------

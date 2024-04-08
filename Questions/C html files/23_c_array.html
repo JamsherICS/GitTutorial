@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept of Arrays in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>An array in C is a collection of elements of the same data type that are stored in contiguous memory locations. It allows you to store multiple values of the same type under a single variable name.</p>
+
+    <p>The general syntax of declaring an array in C is as follows:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">type</span> <span class="var">arrayName</span>[<span class="var">size</span>];</code></pre>
+    </div>
+
+    <p>Where:</p>
+    <ul>
+      <li><span class="keyword">type</span> specifies the data type of the elements in the array.</li>
+      <li><span class="var">arrayName</span> is the name of the array.</li>
+      <li><span class="var">size</span> is the number of elements the array can hold.</li>
+    </ul>
+
+    <p>Arrays in C are zero-indexed, meaning the index of the first element is 0, the index of the second element is 1, and so on.</p>
+
+    <p>Here's an example of declaring and accessing elements of an array in C:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> <span class="var">numbers</span>[<span class="var">5</span>]; <span class="comment">// Declare an array of integers with size 5</span>
+    
+    <span class="comment">// Assign values to elements of the array</span>
+    <span class="var">numbers</span>[<span class="var">0</span>] = <span class="var">10</span>;
+    <span class="var">numbers</span>[<span class="var">1</span>] = <span class="var">20</span>;
+    <span class="var">numbers</span>[<span class="var">2</span>] = <span class="var">30</span>;
+    <span class="var">numbers</span>[<span class="var">3</span>] = <span class="var">40</span>;
+    <span class="var">numbers</span>[<span class="var">4</span>] = <span class="var">50</span>;
+    
+    <span class="comment">// Access and print elements of the array</span>
+    <span class="function">printf</span>(<span class="var">"Element 1: %d\n",</span> <span class="var">numbers</span>[<span class="var">0</span>]);
+    <span class="function">printf</span>(<span class="var">"Element 2: %d\n",</span> <span class="var">numbers</span>[<span class="var">1</span>]);
+    <span class="function">printf</span>(<span class="var">"Element 3: %d\n",</span> <span class="var">numbers</span>[<span class="var">2</span>]);
+    <span class="function">printf</span>(<span class="var">"Element 4: %d\n",</span> <span class="var">numbers</span>[<span class="var">3</span>]);
+    <span class="function">printf</span>(<span class="var">"Element 5: %d\n",</span> <span class="var">numbers</span>[<span class="var">4</span>]);
+    
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, we declare an array of integers named <span class="var">numbers</span> with a size of 5. We then assign values to each element of the array and print them using printf.</p>
+
+  </div>
+
+</body>
+</html>

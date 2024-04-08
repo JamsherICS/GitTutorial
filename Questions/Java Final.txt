@@ -1,0 +1,178 @@
+What is Java?
+What are the differences between C++ and Java?
+List the features of Java Programming language.
+What do you understand by Java virtual machine?
+What is the difference between JDK, JRE, and JVM?
+How many types of memory areas are allocated by JVM?
+What is JIT compiler?
+What is the platform?
+What gives Java its 'write once and run anywhere' nature?
+What is classloader?
+Is Empty .java file name a valid source file name?
+Is delete, next, main, exit, or null keyword in Java?
+What if I write static public void instead of public static void?
+What is the default value of local variables?
+What are the various access specifiers in Java?
+What is the purpose of static methods and variables?
+What are the advantages of Packages in Java?
+What is object-oriented paradigm?
+What is an object?
+What is the difference between an object-oriented programming language and object-based programming language?
+What will be the initial value of an object reference which is defined as an instance variable?
+What is the constructor?
+How many types of constructors are used in Java?
+What is the purpose of a default constructor?
+Does constructor return any value?
+Is constructor inherited?
+Can we make a constructor final?
+Can we overload the constructors?
+What are the differences between the constructors and methods?
+What is the static variable?
+What is the static method?
+Why is the main method static?
+Can we override static methods?
+What is the static block?
+Can we execute a program without the main() method?
+What is the difference between static (class) method and instance method?
+Can we make constructors static?
+What is the 'this' keyword in Java?
+What are the main uses of the 'this' keyword?
+What is inheritance?
+Why is inheritance used in Java?
+What is aggregation?
+What is composition?
+Why does Java not support pointers?
+What is the 'super' keyword in Java?
+What is object cloning?
+What is method overloading?
+Can we overload methods by making them static?
+What is method overriding?
+Can we override static methods?
+What is the difference between method overloading and overriding?
+Can we override private methods?
+What is the difference between compile-time polymorphism and runtime polymorphism?
+What is abstraction?
+What is an abstract class?
+What is the interface?
+What is a marker interface?
+What are the differences between abstract class and interface?
+What is encapsulation?
+What is the package?
+What is Exception Handling?
+How many types of exceptions can occur in a Java program?
+What is the difference between Checked Exception and Unchecked Exception?
+What is finally block?
+What is the difference between throw and throws?
+What is object cloning?
+What is method overloading?
+What is method overriding?
+What is a final variable?
+What is a final method?
+What is a final class?
+What is a final blank variable?
+What is the difference between a final method and an abstract method?
+What is Runtime Polymorphism?
+What is covariant return type?
+What is String Pool?
+What are the differences between String and StringBuffer?
+What are the differences between StringBuffer and StringBuilder?
+What is object cloning?
+What is the purpose of toString() method in Java?
+What is object cloning?
+What is the purpose of the strictfp keyword?
+What is the purpose of the System class?
+What is a singleton class?
+What is a JavaBean?
+What is RMI?
+What is a native method?
+What is the purpose of the strictfp keyword?
+What is the purpose of the System class?
+What is a singleton class?
+What is a JavaBean?
+What is RMI?
+What is the purpose of stub and skeleton?
+What is object cloning?
+What is a native method?
+What is the purpose of the strictfp keyword?
+What is the purpose of the System class?
+What is a singleton class?
+What is a JavaBean?
+What is RMI?
+What is the purpose of stub and skeleton?
+What is JDBC?
+What is JDBC Driver?
+What are the steps to connect to the database in Java?
+What is JDBC Connection interface?
+What does the JDBC ResultSet interface do?
+What is JDBC Rowset?
+What is the role of the JDBC DriverManager class?
+What is Exception Handling?
+How many types of exceptions can occur in a Java program?
+What is the difference between Checked Exception and Unchecked Exception?
+What is the output of the following Java program?
+What is finally block?
+What is the difference between throw and throws?
+What is object cloning?
+What is method overloading?
+What is method overriding?
+What is a final variable?
+What is a final method?
+What is a final class?
+What is a final blank variable?
+What is the difference between a final method and an abstract method?
+What is Runtime Polymorphism?
+What is covariant return type?
+What is String Pool?
+What are the differences between String and StringBuffer?
+What are the differences between StringBuffer and StringBuilder?
+What is object cloning?
+What is the purpose of toString() method in Java?
+What is object cloning?
+What is the purpose of the strictfp keyword?
+What is the purpose of the System class?
+What is a singleton class?
+What is a JavaBean?
+What is RMI?
+What is the purpose of stub and skeleton?
+What is JDBC?
+What is JDBC Driver?
+What are the steps to connect to the database in Java?
+What is JDBC Connection interface?
+What does the JDBC ResultSet interface do?
+What is JDBC Rowset?
+What is the role of the JDBC DriverManager class?
+What is Exception Handling?
+How many types of exceptions can occur in a Java program?
+What is the difference between Checked Exception and Unchecked Exception?
+What is the output of the following Java program?
+What is finally block?
+What is the difference between throw and throws?
+What is object cloning?
+What is method overloading?
+What is method overriding?
+What is a final variable?
+What is a final method?
+What is a final class?
+What is a final blank variable?
+What is the difference between a final method and an abstract method?
+What is Runtime Polymorphism?
+What is covariant return type?
+What is String Pool?
+What are the differences between String and StringBuffer?
+What are the differences between StringBuffer and StringBuilder?
+What is object cloning?
+What is the purpose of toString() method in Java?
+What is object cloning?
+What is the purpose of the strictfp keyword?
+What is the purpose of the System class?
+What is a singleton class?
+What is a JavaBean?
+What is RMI?
+What is the purpose of stub and skeleton?
+What is JDBC?
+What is JDBC Driver?
+What are the steps to connect to the database in Java?
+What is JDBC Connection interface?
+What does the JDBC ResultSet interface do?
+What is JDBC Rowset?
+What is the role of the JDBC DriverManager class?

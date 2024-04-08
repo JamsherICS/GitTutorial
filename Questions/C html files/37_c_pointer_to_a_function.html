@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pointer to a Function in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>A pointer to a function in C holds the address of a function instead of holding a regular data value. This allows us to pass functions as arguments to other functions, return functions from other functions, or store functions in data structures like arrays.</p>
+
+    <p>Here's how you declare and use a pointer to a function:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="comment">// Function to add two numbers</span>
+<span class="keyword">int</span> <span class="function">add</span>(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+    <span class="keyword">return</span> a + b;
+}
+
+<span class="comment">// Declaration of pointer to a function</span>
+<span class="keyword">int</span> (*<span class="var">ptr</span>)(<span class="keyword">int</span>, <span class="keyword">int</span>);
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="comment">// Assigning address of 'add' function to 'ptr'</span>
+    <span class="var">ptr</span> = &amp;<span class="function">add</span>;
+
+    <span class="comment">// Calling the function using pointer to function</span>
+    <span class="keyword">int</span> result = (<span class="var">ptr</span>)(<span class="var">3</span>, <span class="var">4</span>);
+    <span class="function">printf</span>(<span class="var">"Result: %d\n"</span>, result);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, we declared a function <span class="function">add</span> to add two numbers. Then, we declared a pointer to a function named <span class="var">ptr</span>. We assigned the address of the <span class="function">add</span> function to <span class="var">ptr</span>, and then called the function using the pointer.</p>
+
+  </div>
+
+</body>
+</html>

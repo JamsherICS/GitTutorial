@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Difference Between Array and Pointer in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>In C, arrays and pointers are closely related but have some fundamental differences:</p>
+
+    <ol>
+      <li><strong>Memory Allocation:</strong> 
+        <ul>
+          <li><span class="keyword">Array:</span> Arrays are collections of consecutive memory locations allocated statically or dynamically. The size of an array is fixed and determined at compile time.</li>
+          <li><span class="keyword">Pointer:</span> Pointers are variables that store memory addresses. They can point to a single memory location or multiple locations. Pointers can be dynamically allocated and resized using functions like <span class="var">malloc()</span> and <span class="var">realloc()</span>.</li>
+        </ul>
+      </li>
+      <li><strong>Accessing Elements:</strong> 
+        <ul>
+          <li><span class="keyword">Array:</span> Array elements are accessed using array subscript notation, such as <span class="var">array[index]</span>.</li>
+          <li><span class="keyword">Pointer:</span> Pointer elements are accessed using dereferencing, such as <span class="var">*</span><span class="var">ptr</span>.</li>
+        </ul>
+      </li>
+      <li><strong>Size:</strong> 
+        <ul>
+          <li><span class="keyword">Array:</span> The size of an array is fixed and known at compile time.</li>
+          <li><span class="keyword">Pointer:</span> Pointers do not inherently store size information. They only store memory addresses.</li>
+        </ul>
+      </li>
+      <li><strong>Relationship:</strong> 
+        <ul>
+          <li>Arrays and pointers are closely related in C. In many contexts, an array name acts as a pointer to the first element of the array.</li>
+        </ul>
+      </li>
+    </ol>
+
+    <p>Here's an example illustrating the difference between arrays and pointers:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="comment">// Array declaration and initialization</span>
+    <span class="keyword">int</span> <span class="var">array[5]</span> = {<span class="var">1</span>, <span class="var">2</span>, <span class="var">3</span>, <span class="var">4</span>, <span class="var">5</span>};
+
+    <span class="comment">// Pointer declaration and assignment</span>
+    <span class="keyword">int</span> <span class="var">*</span><span class="var">ptr</span> = <span class="var">array</span>;
+
+    <span class="comment">// Accessing array elements using array subscript notation</span>
+    printf(<span class="var">"Array Element: %d\n",</span> <span class="var">array[2]</span>);
+
+    <span class="comment">// Accessing array elements using pointer dereferencing</span>
+    printf(<span class="var">"Pointer Element: %d\n",</span> <span class="var">*</span><span class="var">ptr</span>);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, <span class="var">array</span> is an array of integers, and <span class="var">ptr</span> is a pointer to the first element of the array. Both array elements and pointer elements are accessed and printed.</p>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Memory Allocation in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>Dynamic memory allocation in C refers to the process of allocating memory during program execution, allowing the program to request memory dynamically from the operating system at runtime. This enables the creation of data structures such as arrays and structures whose size is determined during runtime, rather than at compile time.</p>
+
+    <p>The standard library functions <span class="keyword">malloc()</span>, <span class="keyword">calloc()</span>, and <span class="keyword">realloc()</span> are used for dynamic memory allocation in C:</p>
+
+    <ul>
+      <li><span class="keyword">malloc()</span>: Allocates a block of memory of a specified size in bytes.</li>
+      <li><span class="keyword">calloc()</span>: Allocates a block of memory for an array of elements, initializes all bytes to zero, and returns a pointer to the allocated memory.</li>
+      <li><span class="keyword">realloc()</span>: Resizes the memory block pointed to by a previously allocated pointer, possibly moving it to a new location. It also allows for shrinking or expanding the memory block.</li>
+    </ul>
+
+    <p>Here's an example of using <span class="keyword">malloc()</span> to dynamically allocate memory for an integer:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+<span class="keyword">#include</span> <span class="var">&lt;stdlib.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> *<span class="var">ptr;</span>
+
+    <span class="comment">// Allocate memory for an integer</span>
+    <span class="var">ptr</span> = (<span class="keyword">int</span> *)<span class="keyword">malloc</span>(<span class="var">sizeof</span>(<span class="keyword">int</span>));
+
+    <span class="keyword">if</span> (<span class="var">ptr</span> == <span class="keyword">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Memory allocation failed\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+
+    *<span class="var">ptr</span> = <span class="var">10</span>;
+    <span class="function">printf</span>(<span class="var">"Value stored at ptr: %d\n",</span> *<span class="var">ptr</span>);
+
+    <span class="comment">// Deallocate memory</span>
+    <span class="keyword">free</span>(<span class="var">ptr</span>);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, <span class="keyword">malloc()</span> is used to allocate memory for an integer, and the allocated memory is then used to store the value <span class="var">10</span>. After using the memory, it is deallocated using the <span class="keyword">free()</span> function to prevent memory leaks.</p>
+
+  </div>
+
+</body>
+</html>

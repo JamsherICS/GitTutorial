@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Concept of Strings in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <p>In C, strings are sequences of characters terminated by a null character ('\0'). They are commonly used to represent text data.</p>
+
+    <p><strong>1. Declaration of Strings:</strong><br>
+    Strings in C are declared using character arrays. For example:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">char</span> str1[] = <span class="var">"Hello";</span>
+<span class="keyword">char</span> str2[6] = {'H', 'e', 'l', 'l', 'o', '\0'};</span>
+<span class="keyword">char</span> str3[6] = <span class="var">"Hello";</span></code></pre>
+    </div>
+
+    <p>All three declarations create strings containing the characters "Hello", with the null character ('\0') automatically added at the end.</p>
+
+    <p><strong>String Initialization:</strong><br>
+        Strings in C are typically initialized using double quotes.</p>
+    
+        <div class="code">
+          <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">char</span> str[] = <span class="var">"Hello, World!";</span>
+        <span class="function">printf</span>(<span class="var">"String: %s\n",</span> str);
+    
+        <span class="keyword">return</span> <span class="var">0</span>;
+    }</code></pre>
+        </div>
+
+        <p><strong>Accessing String Characters:</strong><br>
+            Individual characters in a string can be accessed using array notation.</p>
+        
+            <div class="code">
+              <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+        
+        <span class="keyword">int</span> <span class="function">main</span>() {
+            <span class="keyword">char</span> str[] = <span class="var">"Hello";</span>
+            <span class="function">printf</span>(<span class="var">"First character: %c\n",</span> str[0]); <span class="comment">// Outputs 'H'</span>
+        
+            <span class="keyword">return</span> <span class="var">0</span>;
+        }</code></pre>
+            </div>
+
+            
+            <p><strong>String Input and Output:</strong><br>
+                Strings can be read from the user using the scanf() function and printed using the printf() function.</p>
+            
+                <div class="code">
+                  <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+            
+            <span class="keyword">int</span> <span class="function">main</span>() {
+                <span class="keyword">char</span> str[50];
+                <span class="function">printf</span>(<span class="var">"Enter a string: "</span>);
+                <span class="function">scanf</span>(<span class="var">"%s",</span> str); <span class="comment">// Input string from user
+                <span class="function">printf</span>(<span class="var">"You entered: %s\n",</span> str); <span class="comment">// Output string</span>
+            
+                <span class="keyword">return</span> <span class="var">0</span>;
+            }</code></pre>
+                </div>
+    <p><strong>1. strcpy():</strong><br>
+        Copies the contents of one string to another.</p>
+    
+        <div class="code">
+          <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+    <span class="keyword">#include</span> <span class="var">&lt;string.h&gt;</span>
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">char</span> str1[20] = <span class="var">"Hello";</span>
+        <span class="keyword">char</span> str2[20];
+    
+        <span class="comment">// Copy str1 to str2</span>
+        <span class="keyword">strcpy</span>(str2, str1);
+        <span class="function">printf</span>(<span class="var">"str2: %s\n",</span> str2);
+    
+        <span class="keyword">return</span> <span class="var">0</span>;
+    }</code></pre>
+        </div>
+    
+        <p><strong>2. strcat():</strong><br>
+        Concatenates two strings.</p>
+    
+        <div class="code">
+          <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+    <span class="keyword">#include</span> <span class="var">&lt;string.h&gt;</span>
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">char</span> str1[20] = <span class="var">"Hello";</span>
+        <span class="keyword">char</span> str2[20] = <span class="var">" World";</span>
+    
+        <span class="comment">// Concatenate str2 to str1</span>
+        <span class="keyword">strcat</span>(str1, str2);
+        <span class="function">printf</span>(<span class="var">"str1: %s\n",</span> str1);
+    
+        <span class="keyword">return</span> <span class="var">0</span>;
+    }</code></pre>
+        </div>
+    
+        <p><strong>3. strcmp():</strong><br>
+        Compares two strings.</p>
+    
+        <div class="code">
+          <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+    <span class="keyword">#include</span> <span class="var">&lt;string.h&gt;</span>
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">char</span> str1[] = <span class="var">"Hello";</span>
+        <span class="keyword">char</span> str2[] = <span class="var">"World";</span>
+    
+        <span class="comment">// Compare str1 and str2</span>
+        <span class="keyword">int</span> result = <span class="keyword">strcmp</span>(str1, str2);
+        <span class="keyword">if</span> (result == 0) {
+            <span class="function">printf</span>(<span class="var">"Both strings are equal.\n");</span>
+        } <span class="keyword">else</span> {
+            <span class="function">printf</span>(<span class="var">"Strings are not equal.\n");</span>
+        }
+    
+        <span class="keyword">return</span> <span class="var">0</span>;
+    }</code></pre>
+        </div>
+
+</div>
+
+  
+
+</body>
+</html>
