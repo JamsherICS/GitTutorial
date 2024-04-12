@@ -1,9 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>41_c_read_and_write_file.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading and Writing Files in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>41_c_read_and_write_file.html</h1>
+
+  <div class="container">
+
+    <h3>Reading from a File:</h3>
+
+    <p>To read from a file in C, follow these steps:</p>
+
+    <ol>
+      <li><span class="keyword">Open the File:</span> Use the <span class="var">fopen()</span> function to open the file in read mode ("r"). This function returns a file pointer that you'll use for subsequent file operations.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="keyword">FILE</span> *file = <span class="function">fopen</span>(<span class="var">"filename.txt"</span>, <span class="var">"r"</span>);
+<span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+    <span class="function">perror</span>(<span class="var">"Error opening file"</span>);
+    <span class="keyword">return</span> <span class="var">1</span>;
+}</code></pre>
+    </div>
+
+    <ol start="2">
+      <li><span class="keyword">Read Data:</span> Use functions like <span class="var">fscanf()</span> or <span class="var">fgets()</span> to read data from the file into variables or buffers.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code>char buffer[100];
+<span class="keyword">while</span> (<span class="function">fgets</span>(buffer, <span class="keyword">sizeof</span>(buffer), file) != <span class="var">NULL</span>) {
+    <span class="function">printf</span>(<span class="var">"%s"</span>, buffer);
+}</code></pre>
+    </div>
+
+    <ol start="3">
+      <li><span class="keyword">Close the File:</span> When you're done reading, close the file using <span class="var">fclose()</span> to release system resources.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fclose</span>(file);</code></pre>
+    </div>
+
+    <h3>Writing to a File:</h3>
+
+    <p>To write to a file in C, follow these steps:</p>
+
+    <ol>
+      <li><span class="keyword">Open/Create the File:</span> Use the <span class="var">fopen()</span> function to open or create the file in write mode ("w" for overwriting existing content or "a" for appending to existing content).</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="keyword">FILE</span> *file = <span class="function">fopen</span>(<span class="var">"filename.txt"</span>, <span class="var">"w"</span>);
+<span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+    <span class="function">perror</span>(<span class="var">"Error opening file"</span>);
+    <span class="keyword">return</span> <span class="var">1</span>;
+}</code></pre>
+    </div>
+
+    <ol start="2">
+      <li><span class="keyword">Write Data:</span> Use functions like <span class="var">fprintf()</span> or <span class="var">fputs()</span> to write data to the file.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fprintf</span>(file, <span class="var">"Hello, world!\n"</span>);</code></pre>
+    </div>
+
+    <ol start="3">
+      <li><span class="keyword">Close the File:</span> When you're done writing, close the file using <span class="var">fclose()</span> to release system resources.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fclose</span>(file);</code></pre>
+    </div>
+
+    <h3>Example: Reading and Writing to a File:</h3>
+
+    <p>Here's an example of reading from and writing to a file in C:</p>
+
+    <div class="code">
+      <pre><code>#include <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    FILE *file;
+
+    <span class="comment">// Writing to a file</span>
+    file = <span class="function">fopen</span>(<span class="var">"example.txt"</span>, <span class="var">"w"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">perror</span>(<span class="var">"Error opening file for writing"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="function">fprintf</span>(file, <span class="var">"This is an example line written to the file.\n"</span>);
+    <span class="function">fclose</span>(file);
+
+    <span class="comment">// Reading from the same file</span>
+    file = <span class="function">fopen</span>(<span class="var">"example.txt"</span>, <span class="var">"r"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">perror</span>(<span class="var">"Error opening file for reading"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    char buffer[100];
+    <span class="keyword">while</span> (<span class="function">fgets</span>(buffer, <span class="keyword">sizeof</span>(buffer), file) != <span class="var">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"%s"</span>, buffer);
+    }
+    <span class="function">fclose</span>(file);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>This example first writes a line to a file named "example.txt" and then reads and prints the contents of the same file. Make sure to handle errors properly and close the file after use to avoid resource leaks.</p>
+
+  </div>
+
 </body>
 </html>

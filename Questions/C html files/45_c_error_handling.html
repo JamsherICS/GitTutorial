@@ -1,9 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>45_c_error_handling.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>error handling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>45_c_error_handling.html</h1>
+    <div class="container">
+      
+        <p>Error handling in C programs involves identifying and responding to unexpected or erroneous conditions that may occur during program execution. Here are common techniques for implementing error handling in C:</p>
+      
+        <h3>Return Values:</h3>
+        <p>Functions can return error codes or special values to indicate errors. The calling code can check these return values and handle errors accordingly.</p>
+        <div class="code">
+          <pre><code><span class="keyword">int</span> result = someFunction();
+      <span class="keyword">if</span> (result &lt; <span class="var">0</span>) {
+          <span class="comment">// Handle error</span>
+      }</code></pre>
+        </div>
+      
+        <h3>Global Error Indicator:</h3>
+        <p>Use a global variable to store error information. Functions can update this variable when errors occur, and the calling code can check it.</p>
+        <div class="code">
+          <pre><code><span class="keyword">int</span> error = <span class="var">0</span>;
+      
+      <span class="keyword">void</span> someFunction() {
+          <span class="comment">// Error occurs</span>
+          error = <span class="var">1</span>;
+      }
+      
+      <span class="keyword">int</span> main() {
+          someFunction();
+          <span class="keyword">if</span> (error) {
+              <span class="comment">// Handle error</span>
+          }
+          <span class="keyword">return</span> <span class="var">0</span>;
+      }</code></pre>
+        </div>
+      
+        <h3>Error Codes:</h3>
+        <p>Define error codes for different types of errors using macros or enumeration constants. Functions can return these error codes, and the calling code can switch on them to determine the appropriate error handling.</p>
+        <div class="code">
+          <pre><code>#define ERROR_OUT_OF_MEMORY -1
+      #define ERROR_FILE_NOT_FOUND -2
+      
+      <span class="keyword">int</span> someFunction() {
+          <span class="comment">// Error occurs</span>
+          <span class="keyword">return</span> ERROR_OUT_OF_MEMORY;
+      }
+      
+      <span class="keyword">int</span> main() {
+          <span class="keyword">int</span> result = someFunction();
+          <span class="keyword">switch</span> (result) {
+              <span class="keyword">case</span> ERROR_OUT_OF_MEMORY:
+                  <span class="comment">// Handle out of memory error</span>
+                  <span class="keyword">break</span>;
+              <span class="keyword">case</span> ERROR_FILE_NOT_FOUND:
+                  <span class="comment">// Handle file not found error</span>
+                  <span class="keyword">break</span>;
+              <span class="keyword">default</span>:
+                  <span class="comment">// Handle other errors</span>
+                  <span class="keyword">break</span>;
+          }
+          <span class="keyword">return</span> <span class="var">0</span>;
+      }</code></pre>
+        </div>
+
+            <h3>Error Reporting Functions</h3>
+          
+            <p>Define functions for reporting errors, such as printing error messages to the console, logging errors to a file, or displaying error dialogs.</p>
+            <div class="code">
+              <pre><code><span class="keyword">void</span> reportError(<span class="keyword">const</span> <span class="keyword">char</span> *message) {
+              fprintf(stderr, <span class="string">"Error: %s\n"</span>, message);
+          }
+          
+          <span class="keyword">int</span> main() {
+              <span class="comment">// Error occurs</span>
+              reportError(<span class="string">"An error occurred"</span>);
+              <span class="keyword">return</span> <span class="var">1</span>;
+          }</code></pre>
+            </div>
+          
+            <h3>errno and perror</h3>
+          
+            <p>Use the errno variable and perror() function provided by the standard library to report errors related to system calls.</p>
+            <div class="code">
+              <pre><code>#include &lt;stdio.h&gt;
+          #include &lt;errno.h&gt;
+          
+          <span class="keyword">int</span> main() {
+              FILE *file = fopen(<span class="string">"nonexistent_file.txt"</span>, <span class="string">"r"</span>);
+              <span class="keyword">if</span> (file == <span class="keyword">NULL</span>) {
+                  perror(<span class="string">"Error opening file"</span>);
+                  printf(<span class="string">"Error code: %d\n"</span>, errno);
+              }
+              <span class="keyword">return</span> <span class="var">0</span>;
+          }</code></pre>
+            </div>
+          
+            <h3>Assertions</h3>
+          
+            <p>Use assertions (assert()) to check for conditions that should always be true during program execution. If an assertion fails, it indicates a bug in the program.</p>
+            <div class="code">
+              <pre><code>#include &lt;assert.h&gt;
+          
+          <span class="keyword">int</span> main() {
+              <span class="keyword">int</span> x = <span class="var">10</span>;
+              assert(x &gt; <span class="var">0</span>);
+              <span class="keyword">return</span> <span class="var">0</span>;
+          }</code></pre>
+            </div>
+          
+            <p>Choose the appropriate error handling technique based on the nature of the error and the requirements of your program. Effective error handling can improve the reliability and robustness of your C programs.</p>
+     
+      </div>
+           
 </body>
 </html>

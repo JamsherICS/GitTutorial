@@ -1,9 +1,143 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>43_c_command_line_arguments.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Command-line Arguments in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>43_c_command_line_arguments.html</h1>
+
+  <div class="container">
+
+    <p>Command-line arguments in C are parameters passed to a program when it is executed from the command line. They are typically used to provide input data, specify options, or control the execution of the program.</p>
+
+    <h4>How to Use Command-line Arguments in C:</h4>
+
+    <p>Function Signature:<br>In the <code>main()</code> function, you can declare two parameters: <code>argc</code> (argument count) and <code>argv</code> (argument vector).</p>
+
+    <div class="code">
+      <pre><code>int main(int argc, char *argv[])</code></pre>
+    </div>
+
+    <p><strong>Argument Count (<code>argc</code>):</strong></p>
+
+    <ul>
+      <li><code>argc</code> holds the number of command-line arguments passed to the program, including the name of the program itself.</li>
+      <li>It's an integer value that indicates how many arguments were provided.</li>
+    </ul>
+
+    <p><strong>Argument Vector (<code>argv</code>):</strong></p>
+
+    <ul>
+      <li><code>argv</code> is an array of strings (<code>char*</code>) that holds the actual command-line arguments.</li>
+      <li>Each element of <code>argv</code> is a null-terminated C string representing one command-line argument.</li>
+      <li><code>argv[0]</code> contains the name of the program itself, while <code>argv[1]</code> to <code>argv[argc-1]</code> contain the actual arguments provided by the user.</li>
+    </ul>
+
+    <p><strong>Accessing Command-line Arguments:</strong></p>
+
+    <p>You can access command-line arguments using array notation (<code>argv[index]</code>) just like accessing elements of any other array.</p>
+
+    <div class="code">
+      <pre><code>printf("Program name: %s\n", argv[0]);</code></pre>
+    </div>
+
+    <h4>Example:</h4>
+
+    <p>Below is an example of using command-line arguments in a C program:</p>
+
+    <div class="code">
+        <pre><code>#include &lt;stdio.h&gt;
+    
+    <span class="keyword">int</span> main(<span class="var">int</span> argc, <span class="var">char</span> *argv[]) {
+        printf("Number of arguments: %d\n", argc);
+    
+        <span class="comment">// Print all command-line arguments</span>
+        <span class="keyword">for</span> (<span class="var">int</span> i = 0; i &lt; argc; i++) {
+            printf("Argument %d: %s\n", i, argv[i]);
+        }
+    
+        <span class="keyword">return</span> 0;
+    }</code></pre>
+    </div>
+    
+
+    <h4>How to Run a Program with Command-line Arguments:</h4>
+
+    <p>To run a C program with command-line arguments, you need to provide them after the program's executable name when invoking the program from the command line. For example:</p>
+
+    <div class="code">
+      <pre><code>./program arg1 arg2 arg3</code></pre>
+    </div>
+
+    <p>Here, <code>program</code> is the name of the executable file, and <code>arg1</code>, <code>arg2</code>, <code>arg3</code> are the command-line arguments.</p>
+
+    <h4>Example Output:</h4>
+
+    <p>For the above example program, if run with command-line arguments like this:</p>
+
+    <div class="code">
+      <pre><code>./program hello world 123</code></pre>
+    </div>
+
+    <p>The output would be:</p>
+
+    <div class="code">
+      <pre><code>Number of arguments: 4
+Argument 0: ./program
+Argument 1: hello
+Argument 2: world
+Argument 3: 123</code></pre>
+    </div>
+
+    <p>This demonstrates how command-line arguments can be used to pass information to a C program from the command line.</p>
+
+  </div>
+
 </body>
 </html>

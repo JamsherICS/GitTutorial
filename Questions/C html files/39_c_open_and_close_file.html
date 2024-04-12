@@ -56,27 +56,27 @@
     <h3>Opening a File:</h3>
     <p>To open a file, you use the <span class="keyword">fopen()</span> function, which takes two arguments:</p>
     <ul>
-      <li>The file path: A string containing the path to the file you want to open.</li>
-      <li>The mode: A string indicating the mode in which you want to open the file (e.g., read, write, append).</li>
+      <li><b>The file path:</b> A string containing the path to the file you want to open.</li>
+      <li><b>The mode:</b> A string indicating the mode in which you want to open the file (e.g., read, write, append).</li>
     </ul>
     <p>The syntax for <span class="keyword">fopen()</span> is as follows:</p>
-    <div class="code">
-      <pre><code>FILE *fptr;
-fptr = fopen("file_path", "mode");</code></pre>
-    </div>
+
+    <div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
+      <pre><code>FILE *<span class="var">fptr</span>;
+<span class="var">fptr</span> = <span class="keyword">fopen</span>(<span class="string">"file_path"</span>, <span class="string">"mode"</span>);</code></pre>
+  </div>
+  
     <p>For example:</p>
-    <div class="code">
-      <pre><code>FILE *filePointer;
-filePointer = fopen("example.txt", "w");</code></pre>
-    </div>
+
+    <div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
+      <pre><code>FILE *<span class="var">filePointer</span>;
+<span class="var">filePointer</span> = <span class="keyword">fopen</span>(<span class="string">"example.txt"</span>, <span class="string">"w"</span>);</code></pre>
+  </div>  
 
     <h3>Closing a File:</h3>
     <p>After you have finished working with a file, it's important to close it using the <span class="keyword">fclose()</span> function. This function takes one argument: the file pointer that was returned by <span class="keyword">fopen()</span>.</p>
     <p>The syntax for <span class="keyword">fclose()</span> is simple:</p>
-    <div class="code">
-      <pre><code>fclose(filePointer);</code></pre>
-    </div>
-    <p>For example:</p>
+
     <div class="code">
       <pre><code>fclose(filePointer);</code></pre>
     </div>
@@ -84,31 +84,33 @@ filePointer = fopen("example.txt", "w");</code></pre>
     <p>It's good practice to close files after you're done using them to release system resources and ensure data integrity.</p>
 
     <h3>Complete Example:</h3>
-    <div class="code">
+
+    <div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
       <pre><code>#include &lt;stdio.h&gt;
-
-int main() {
-    FILE *filePointer;
-
-    // Open a file named "example.txt" for writing
-    filePointer = fopen("example.txt", "w");
-
-    // Check if file opened successfully
-    if (filePointer == NULL) {
-        printf("Error opening file!\n");
-        return 1; // Return an error code
-    }
-
-    printf("File opened successfully!\n");
-
-    // Close the file
-    fclose(filePointer);
-    
-    printf("File closed.\n");
-
-    return 0; // Return success
-}</code></pre>
-    </div>
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      FILE *<span class="var">filePointer</span>;
+  
+      <span class="comment">// Open a file named "example.txt" for writing</span>
+      <span class="var">filePointer</span> = <span class="keyword">fopen</span>(<span class="string">"example.txt"</span>, <span class="string">"w"</span>);
+  
+      <span class="comment">// Check if file opened successfully</span>
+      <span class="keyword">if</span> (<span class="var">filePointer</span> == <span class="keyword">NULL</span>) {
+          <span class="function">printf</span>(<span class="string">"Error opening file!\n"</span>);
+          <span class="keyword">return</span> <span class="var">1</span>; <span class="comment">// Return an error code</span>
+      }
+  
+      <span class="function">printf</span>(<span class="string">"File opened successfully!\n"</span>);
+  
+      <span class="comment">// Close the file</span>
+      <span class="keyword">fclose</span>(<span class="var">filePointer</span>);
+  
+      <span class="function">printf</span>(<span class="string">"File closed.\n"</span>);
+  
+      <span class="keyword">return</span> <span class="var">0</span>; <span class="comment">// Return success</span>
+  }</code></pre>
+  </div>
+  
 
     <p>In this example:</p>
     <ul>

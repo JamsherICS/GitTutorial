@@ -1,9 +1,9 @@
-<?php echo '<!DOCTYPE html>'; ?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>File Handling in C</title>
+  <title>malloc() vs calloc() in C</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -49,78 +49,45 @@
 </head>
 <body>
 
-<?php echo '<div class="container">'; ?>
+  <div class="container">
 
-    <p>In C, you can open and close a file using the <code>fopen()</code> and <code>fclose()</code> functions, respectively.</p>
+    <p>The <span class="keyword">malloc()</span> and <span class="keyword">calloc()</span> functions are used for dynamic memory allocation in C. However, they differ in their behavior:</p>
 
-    <h3>Opening a File:</h3>
-    <p>To open a file, you use the <code>fopen()</code> function, which takes two arguments:</p>
     <ul>
-      <li>The file path: A string containing the path to the file you want to open.</li>
-      <li>The mode: A string indicating the mode in which you want to open the file (e.g., read, write, append).</li>
-    </ul>
-    <p>The syntax for <code>fopen()</code> is as follows:</p>
-
-    <div class="code">
-      <xmp>FILE *fptr;
-fptr = fopen("file_path", "mode");</xmp>
-    </div>
-
-    <p>For example:</p>
-
-    <div class="code">
-      <xmp>FILE *filePointer;
-filePointer = fopen("example.txt", "w");</xmp>
-    </div>
-
-    <h3>Closing a File:</h3>
-    <p>After you have finished working with a file, it's important to close it using the <code>fclose()</code> function. This function takes one argument: the file pointer that was returned by <code>fopen()</code>.</p>
-    <p>The syntax for <code>fclose()</code> is simple:</p>
-
-    <div class="code">
-      <xmp>fclose(filePointer);</xmp>
-    </div>
-
-    <p>It's good practice to close files after you're done using them to release system resources and ensure data integrity.</p>
-
-    <h3>Complete Example:</h3>
-
-    <div class="code">
-      <xmp>#include &lt;stdio.h&gt;
-
-int main() {
-    FILE *filePointer;
-
-    // Open a file named "example.txt" for writing
-    filePointer = fopen("example.txt", "w");
-
-    // Check if file opened successfully
-    if (filePointer == NULL) {
-        printf("Error opening file!\n");
-        return 1; // Return an error code
-    }
-
-    printf("File opened successfully!\n");
-
-    // Close the file
-    fclose(filePointer);
-
-    printf("File closed.\n");
-
-    return 0; // Return success
-}</xmp>
-    </div>
-
-    <p>In this example:</p>
-    <ul>
-      <li>We open a file named "example.txt" for writing using <code>fopen()</code> with mode "w".</li>
-      <li>We check if the file was opened successfully and print a message accordingly.</li>
-      <li>We close the file using <code>fclose()</code>.</li>
-      <li>We print a message indicating that the file has been closed.</li>
-      <li>Finally, we return 0 to indicate success.</li>
+      <li><span class="keyword">malloc()</span>: Allocates a block of memory of a specified size in bytes. The allocated memory is uninitialized, meaning it contains garbage values.</li>
+      <li><span class="keyword">calloc()</span>: Allocates a block of memory for an array of elements, initializes all bytes to zero, and returns a pointer to the allocated memory.</li>
     </ul>
 
-<?php echo '</div>'; ?>
+    <p>Here's a comparison between <span class="keyword">malloc()</span> and <span class="keyword">calloc()</span>:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+<span class="keyword">#include</span> <span class="var">&lt;stdlib.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">int</span> *<span class="var">ptr_malloc</span>, *<span class="var">ptr_calloc</span>;
+
+    <span class="comment">// Allocate memory using malloc()</span>
+    <span class="var">ptr_malloc</span> = (<span class="keyword">int</span> *)<span class="keyword">malloc</span>(<span class="var">5</span> * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));
+
+    <span class="comment">// Allocate memory using calloc()</span>
+    <span class="var">ptr_calloc</span> = (<span class="keyword">int</span> *)<span class="keyword">calloc</span>(<span class="var">5</span>, <span class="keyword">sizeof</span>(<span class="keyword">int</span>));
+
+    <span class="comment">// Print the memory addresses</span>
+    <span class="function">printf</span>(<span class="var">"Memory address using malloc(): %p\n",</span> (<span class="keyword">void</span> *)<span class="var">ptr_malloc</span>);
+    <span class="function">printf</span>(<span class="var">"Memory address using calloc(): %p\n",</span> (<span class="keyword">void</span> *)<span class="var">ptr_calloc</span>);
+
+    <span class="comment">// Free allocated memory</span>
+    <span class="keyword">free</span>(<span class="var">ptr_malloc</span>);
+    <span class="keyword">free</span>(<span class="var">ptr_calloc</span>);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>In this example, <span class="keyword">malloc()</span> and <span class="keyword">calloc()</span> are used to allocate memory for 5 integers each. The difference is that memory allocated by <span class="keyword">malloc()</span> contains garbage values, while memory allocated by <span class="keyword">calloc()</span> is initialized to zero.</p>
+
+  </div>
 
 </body>
 </html>

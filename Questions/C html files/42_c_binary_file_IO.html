@@ -1,9 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>42_c_binary_file_IO.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Binary File I/O in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>42_c_binary_file_IO.html</h1>
+
+  <div class="container">
+
+    <h3>Binary File I/O in C</h3>
+
+    <p>Binary file I/O in C involves reading from and writing to files in their binary representation, which means handling data at the lowest level of abstraction, typically as sequences of bytes.</p>
+
+    <h4>Key Concepts:</h4>
+
+    <ul>
+      <li><span class="keyword">Raw Data Representation:</span> Binary files store data in its raw, unprocessed form. Each piece of data occupies a fixed number of bytes in memory.</li>
+      <li><span class="keyword">No Character Encoding:</span> Unlike text files, binary files do not use character encoding schemes like ASCII or Unicode. They can store any kind of data, including integers, floating-point numbers, structs, and raw bytes.</li>
+      <li><span class="keyword">Direct Memory Mapping:</span> Binary files map directly to memory, meaning that the bytes stored in the file correspond directly to the bytes in memory. This allows for efficient reading and writing of data without the need for translation.</li>
+    </ul>
+
+    <h4>File Operations:</h4>
+
+    <ol>
+      <li><span class="keyword">Opening a Binary File:</span> Use the <span class="var">fopen()</span> function with the appropriate mode ("rb" for reading, "wb" for writing, "ab" for appending) to open a binary file.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="keyword">FILE</span> *file = <span class="function">fopen</span>(<span class="var">"data.bin"</span>, <span class="var">"rb"</span>);</code></pre>
+    </div>
+
+    <ol start="2">
+      <li><span class="keyword">Reading from a Binary File:</span> Use functions like <span class="var">fread()</span> to read binary data from the file into memory.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fread</span>(buffer, <span class="keyword">sizeof</span>(buffer), <span class="var">1</span>, file);</code></pre>
+    </div>
+
+    <ol start="3">
+      <li><span class="keyword">Writing to a Binary File:</span> Use functions like <span class="var">fwrite()</span> to write binary data from memory to the file.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fwrite</span>(data, <span class="keyword">sizeof</span>(data), <span class="var">5</span>, file);</code></pre>
+    </div>
+
+    <ol start="4">
+      <li><span class="keyword">Closing the Binary File:</span> Always close the file after reading or writing using <span class="var">fclose()</span> to release system resources.</li>
+    </ol>
+
+    <div class="code">
+      <pre><code><span class="function">fclose</span>(file);</code></pre>
+    </div>
+
+    <h3>Example:</h3>
+
+    <p>Below is an example of reading from and writing to a binary file in C:</p>
+
+    <div class="code">
+      <pre><code>#include <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    FILE *file;
+
+    <span class="comment">// Writing to a binary file</span>
+    file = <span class="function">fopen</span>(<span class="var">"data.bin"</span>, <span class="var">"wb"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">perror</span>(<span class="var">"Error opening file for writing"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="keyword">int</span> data[] = {<span class="var">10</span>, <span class="var">20</span>, <span class="var">30</span>, <span class="var">40</span>, <span class="var">50</span>};
+    <span class="function">fwrite</span>(data, <span class="keyword">sizeof</span>(<span class="keyword">int</span>), <span class="var">5</span>, file);
+    <span class="function">fclose</span>(file);
+
+    <span class="comment">// Reading from the same binary file</span>
+    file = <span class="function">fopen</span>(<span class="var">"data.bin"</span>, <span class="var">"rb"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">perror</span>(<span class="var">"Error opening file for reading"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="keyword">int</span> buffer[<span class="var">5</span>];
+    <span class="function">fread</span>(buffer, <span class="keyword">sizeof</span>(<span class="keyword">int</span>), <span class="var">5</span>, file);
+    <span class="function">fclose</span>(file);
+
+    <span class="comment">// Printing the data</span>
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="var">0</span>; i < <span class="var">5</span>; ++i) {
+        <span class="function">printf</span>(<span class="var">"%d "</span>, buffer[i]);
+    }
+    <span class="function">printf</span>(<span class="var">"\n"</span>);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>This example demonstrates writing an array of integers to a binary file named "data.bin" and then reading it back into memory. Binary file I/O is particularly useful for storing and transferring structured data efficiently, especially when dealing with large datasets or non-textual data formats.</p>
+
+  </div>
+
 </body>
 </html>

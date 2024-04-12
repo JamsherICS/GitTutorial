@@ -1,9 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>40_c_file_modes.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Modes in C</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>40_c_file_modes.html</h1>
+
+  <div class="container">
+
+    <p>In C programming, there are several file modes that you can use when opening files:</p>
+
+    <ul>
+      <li><b><span class="var">"r"</span> (Read Mode):</b>
+        <ul>
+          <li>Opens a file for reading.</li>
+          <li>If the file doesn't exist or cannot be opened, fopen() returns NULL.</li>
+          <li>The file pointer is positioned at the beginning of the file.</li>
+        </ul>
+      </li><br>
+      <li><b><span class="var">"w"</span> (Write Mode):</b>
+        <ul>
+          <li>Opens a file for writing.</li>
+          <li>If the file exists, its contents are overwritten. If the file doesn't exist, a new file is created.</li>
+          <li>fopen() will return NULL if the file cannot be opened.</li>
+          <li>The file pointer is positioned at the beginning of the file.</li>
+        </ul>
+      </li><br>
+      <li><b><span class="var">"a"</span> (Append Mode):</b>
+        <ul>
+          <li>Opens a file for appending.</li>
+          <li>If the file doesn't exist, a new file is created.</li>
+          <li>The file pointer is positioned at the end of the file.</li>
+          <li>Data written to the file is always appended to the end.</li>
+        </ul>
+      </li><br>
+      <li><b><span class="var">"r+"</span>" (Read/Write Mode):</b>
+        <ul>
+          <li>Opens a file for both reading and writing.</li>
+          <li>The file must exist, or fopen() will return NULL.</li>
+          <li>The file pointer is positioned at the beginning of the file.</li>
+        </ul>
+      </li><br>
+      <li><b><span class="var">"w+"</span>" (Read/Write Mode):</b>
+        <ul>
+          <li>Opens a file for both reading and writing.</li>
+          <li>If the file exists, its contents are overwritten. If the file doesn't exist, a new file is created.</li>
+          <li>The file pointer is positioned at the beginning of the file.</li>
+        </ul>
+      </li><br>
+      <li><b><span class="var">"a+"</span>" (Read/Append Mode):</b>
+        <ul>
+          <li>Opens a file for both reading and appending.</li>
+          <li>If the file doesn't exist, a new file is created.</li>
+          <li>The file pointer is positioned at the end of the file.</li>
+          <li>Data written to the file is always appended to the end.</li>
+        </ul>
+      </li>
+    </ul>
+
+    <p>Below is an example of how to use these file modes in C:</p>
+
+    <div class="code">
+      <pre><code><span class="keyword">#include</span> <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    FILE *file;
+
+    <span class="comment">// Example: Reading from a file</span>
+    file = fopen(<span class="var">"example.txt"</span>, <span class="var">"r"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Error opening file for reading!\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="function">printf</span>(<span class="var">"File opened successfully for reading.\n"</span>);
+    <span class="comment">// Read operations go here</span>
+    fclose(file);
+
+    <span class="comment">// Example: Writing to a file</span>
+    file = fopen(<span class="var">"example.txt"</span>, <span class="var">"w"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Error opening file for writing!\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="function">printf</span>(<span class="var">"File opened successfully for writing.\n"</span>);
+    <span class="comment">// Write operations go here</span>
+    fprintf(file, <span class="var">"This is an example line written to the file.\n"</span>);
+    fclose(file);
+
+    <span class="comment">// Example: Appending to a file</span>
+    file = fopen(<span class="var">"example.txt"</span>, <span class="var">"a"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Error opening file for appending!\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="function">printf</span>(<span class="var">"File opened successfully for appending.\n"</span>);
+    <span class="comment">// Append operations go here</span>
+    fprintf(file, <span class="var">"This line is appended to the file.\n"</span>);
+    fclose(file);
+
+    <span class="comment">// Example: Reading and writing to a file</span>
+    file = fopen(<span class="var">"example.txt"</span>, <span class="var">"r+"</span>);
+    <span class="keyword">if</span> (file == <span class="var">NULL</span>) {
+        <span class="function">printf</span>(<span class="var">"Error opening file for reading and writing!\n"</span>);
+        <span class="keyword">return</span> <span class="var">1</span>;
+    }
+    <span class="function">printf</span>(<span class="var">"File opened successfully for reading and writing.\n"</span>);
+    <span class="comment">// Read and write operations go here</span>
+    fclose(file);
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+  </div>
+
 </body>
 </html>

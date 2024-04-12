@@ -1,9 +1,136 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>44_c_multi_dimensional_arrays.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>multi-dimensional arrays</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>44_c_multi_dimensional_arrays.html</h1>
+
+    <div class="container">
+        
+            <h3><span class="keyword">Multi-Dimensional Arrays</span> in C</h3>
+          
+            <p>A multi-dimensional array is an array that contains other arrays as its elements. It is essentially an array of arrays, where each element of the main array is itself an array. Multi-dimensional arrays are commonly used to represent tables, matrices, or other structured data with multiple dimensions.</p>
+          
+            <h4>Syntax:</h4>
+            <div class="code">
+              <pre><code><span class="var">data_type</span> <span class="var">array_name</span>[<span class="var">size1</span>][<span class="var">size2</span>]...[<span class="var">sizeN</span>];
+          
+          <span class="var">data_type</span>: Specifies the type of data that the array will hold (e.g., int, float, char).
+          <span class="var">array_name</span>: Specifies the name of the array.
+          <span class="var">size1</span>, <span class="var">size2</span>, ..., <span class="var">sizeN</span>: Specifies the sizes of each dimension of the array.</code></pre>
+            </div>
+          
+            <h4>Example:</h4>
+            <p>Here's an example of a 2D array (matrix) in C:</p>
+            <div class="code">
+              <pre><code>#include &lt;stdio.h&gt;
+          
+          <span class="keyword">int</span> <span class="function">main</span>() {
+              <span class="keyword">int</span> <span class="var">matrix</span>[<span class="var">3</span>][<span class="var">3</span>] = {
+                  {<span class="var">1</span>, <span class="var">2</span>, <span class="var">3</span>},
+                  {<span class="var">4</span>, <span class="var">5</span>, <span class="var">6</span>},
+                  {<span class="var">7</span>, <span class="var">8</span>, <span class="var">9</span>}
+              };
+          
+              <span class="comment">/* In this example:
+                 - matrix is a 2D array with 3 rows and 3 columns.
+                 - Each element of the matrix is accessed using two indices: matrix[row_index][column_index]. */</span>
+          
+              <span class="keyword">return</span> <span class="var">0</span>;
+          }</code></pre>
+            </div>          
+
+            <h3>Accessing Elements</h3>
+          
+            <p>To access elements of a multi-dimensional array, you need to specify the indices corresponding to each dimension.</p>
+            <div class="code">
+              <pre><code><span class="keyword">int</span> value = matrix[<span class="var">row_index</span>][<span class="var">column_index</span>];
+          <span class="var">row_index</span>: Specifies the index of the row.
+          <span class="var">column_index</span>: Specifies the index of the column.</code></pre>
+            </div>
+          
+            <h3>Initializing Multi-dimensional Arrays</h3>
+          
+            <p>Multi-dimensional arrays can be initialized using nested curly braces to specify the values for each dimension.</p>
+            <div class="code">
+              <pre><code><span class="keyword">int</span> matrix[2][3] = {
+              {<span class="var">1</span>, <span class="var">2</span>, <span class="var">3</span>},
+              {<span class="var">4</span>, <span class="var">5</span>, <span class="var">6</span>}
+          };</code></pre>
+            </div>
+          
+            <h3>Passing Multi-dimensional Arrays to Functions</h3>
+          
+            <p>When passing multi-dimensional arrays to functions, you need to specify the sizes of all dimensions except the first one.</p>
+            <div class="code">
+              <pre><code><span class="keyword">void</span> printMatrix(<span class="var">int</span> rows, <span class="var">int</span> cols, <span class="var">int</span> matrix[rows][cols]) {
+              // Function implementation
+          }</code></pre>
+            </div>
+          
+            <h3>Dynamic Allocation of Multi-dimensional Arrays</h3>
+          
+            <p>Multi-dimensional arrays can be dynamically allocated using pointers and malloc() or calloc() functions.</p>
+            <div class="code">
+              <pre><code><span class="keyword">int</span> **matrix;
+          matrix = malloc(<span class="var">rows</span> * <span class="keyword">sizeof</span>(<span class="keyword">int</span> *));
+          for (<span class="keyword">int</span> i = <span class="var">0</span>; i &lt; <span class="var">rows</span>; i++) {
+              matrix[i] = malloc(<span class="var">cols</span> * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));
+          }</code></pre>
+            </div>
+          
+            <h3>Usage</h3>
+          
+            <p>Multi-dimensional arrays are commonly used to represent data structures like matrices, grids, tables, and images. They provide an efficient way to organize and access data in multiple dimensions, allowing for complex data manipulation and algorithms in C programming.</p>
+          
+      </div> 
+
 </body>
 </html>
