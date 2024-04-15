@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>multi-dimensional arrays</title>
+  <title>typedef</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -51,6 +51,22 @@
   </style>
 </head>
 <body>
+
+  <div class="container">
+
+    <p>Imagine you have a friend named <span class="var">John</span>. But instead of always calling him "<span class="var">John</span>," you decide to give him a nickname, like "<span class="var">Johnny</span>." Now, whenever you want to refer to your friend, you can just use the nickname "<span class="var">Johnny</span>" instead of his full name "<span class="var">John</span>." It's the same person, just with a different name you've chosen.</p>
+
+    <p>In C, <code class="keyword">typedef</code> does something similar. It lets you give a nickname (or alias) to a data type. For example, instead of always writing <span class="var">int</span> for integer variables, you could use <code class="keyword">typedef</code> to create a nickname like <span class="var">Int32</span>. So, whenever you need an integer, you can just use <span class="var">Int32</span> instead of <span class="var">int</span>.</p>
+
+    <div class="code">
+        <pre><code>typedef <span class="keyword">int</span> <span class="function">Int32</span>; // Int32 is now an alias for int</span>
+
+<span class="function">Int32</span> number = 42; // Same as writing: int number = 42;</code></pre>
+    </div>
+
+    <p>Using <code class="keyword">typedef</code>, you can also create nicknames for more complex data types, like structures or arrays, to make your code easier to understand and maintain.</p>
+
+</div>
 
 
     

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>multi-dimensional arrays</title>
+  <title>bitwise</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -52,6 +52,86 @@
 </head>
 <body>
 
+  <div class="container">
+
+    <p>Bitwise operations in C are operations that manipulate individual bits of binary representations of integers. These operations work directly on the binary representations of integers, allowing you to perform tasks such as setting, clearing, or toggling specific bits, as well as performing logical operations at the bit level.</p>
+
+    <h4>Common Bitwise Operators:</h4>
+
+    <ul>
+        <li><span class="keyword">Bitwise AND (&):</span>
+            <ul>
+                <li>Performs a logical AND operation on corresponding bits of two operands.</li>
+                <li>The result is 1 if both bits are 1; otherwise, it's 0.</li>
+            </ul>
+        </li>
+        <li><span class="keyword">Bitwise OR (|):</span>
+            <ul>
+                <li>Performs a logical OR operation on corresponding bits of two operands.</li>
+                <li>The result is 1 if at least one of the bits is 1; otherwise, it's 0.</li>
+            </ul>
+        </li>
+        <li><span class="keyword">Bitwise XOR (^):</span>
+            <ul>
+                <li>Performs a logical XOR (exclusive OR) operation on corresponding bits of two operands.</li>
+                <li>The result is 1 if the bits are different; otherwise, it's 0.</li>
+            </ul>
+        </li>
+        <li><span class="keyword">Bitwise NOT (~):</span>
+            <ul>
+                <li>Performs a logical NOT operation on each bit of the operand.</li>
+                <li>It flips each bit, changing 0 to 1 and 1 to 0.</li>
+            </ul>
+        </li>
+        <li><span class="keyword">Left Shift (<<):</span>
+            <ul>
+                <li>Shifts the bits of the left operand to the left by a specified number of positions.</li>
+                <li>Each shift moves the bits to the left and fills in with zeros on the right.</li>
+            </ul>
+        </li>
+        <li><span class="keyword">Right Shift (>>):</span>
+            <ul>
+                <li>Shifts the bits of the left operand to the right by a specified number of positions.</li>
+                <li>For unsigned types, it fills in with zeros on the left.</li>
+                <li>For signed types, it fills in with the sign bit (0 for positive, 1 for negative) on the left, which preserves the sign of the number.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h4>Example:</h4>
+
+    <div class="code">
+        <pre><code>#include <span class="var">&lt;stdio.h&gt;</span>
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    unsigned int x = <span class="var">5</span>; <span class="comment">// Binary representation: 0000 0101</span>
+    unsigned int y = <span class="var">3</span>; <span class="comment">// Binary representation: 0000 0011</span>
+
+    <span class="comment">// Bitwise AND</span>
+    printf(<span class="var">"x & y = %u\n"</span>, x & y); <span class="comment">// Result: 0000 0001 (1 in decimal)</span>
+
+    <span class="comment">// Bitwise OR</span>
+    printf(<span class="var">"x | y = %u\n"</span>, x | y); <span class="comment">// Result: 0000 0111 (7 in decimal)</span>
+
+    <span class="comment">// Bitwise XOR</span>
+    printf(<span class="var">"x ^ y = %u\n"</span>, x ^ y); <span class="comment">// Result: 0000 0110 (6 in decimal)</span>
+
+    <span class="comment">// Bitwise NOT</span>
+    printf(<span class="var">"~x = %u\n"</span>, ~x); <span class="comment">// Result: 1111 1010 (4294967290 in decimal, assuming 32-bit int)</span>
+
+    <span class="comment">// Left Shift</span>
+    printf(<span class="var">"x &lt;&lt; 1 = %u\n"</span>, x &lt;&lt; <span class="var">1</span>); <span class="comment">// Result: 0000 1010 (10 in decimal)</span>
+
+    <span class="comment">// Right Shift</span>
+    printf(<span class="var">"x &gt;&gt; 1 = %u\n"</span>, x &gt;&gt; <span class="var">1</span>); <span class="comment">// Result: 0000 0010 (2 in decimal)</span>
+
+    <span class="keyword">return</span> <span class="var">0</span>;
+}</code></pre>
+    </div>
+
+    <p>Bitwise operations are often used in low-level programming, such as manipulating hardware registers, implementing data compression algorithms, or optimizing code for performance. They provide a powerful tool for working with individual bits and performing efficient bit-level computations.</p>
+
+</div>
 
     
 </body>

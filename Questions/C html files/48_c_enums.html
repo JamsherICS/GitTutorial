@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>multi-dimensional arrays</title>
+  <title>enum</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -51,6 +51,76 @@
   </style>
 </head>
 <body>
+  <div class="container">
+
+    <p>Enums, short for enumerations, in C are user-defined data types that consist of a set of named constants, known as enumerators. Each enumerator has an associated integer value, typically starting from 0 and incrementing by 1 for each subsequent enumerator, although you can specify custom values if needed.</p>
+
+    <p>Enums are useful when you want to define a set of related named constants with a clear and meaningful representation in your code.</p>
+
+    <h4>How to Define Enums:</h4>
+    <p>You can define an enum using the <code class="keyword">enum</code> keyword followed by the name of the enum and a list of enumerators enclosed in curly braces. Here's the syntax:</p>
+    <div class="code">
+        <pre><code><span class="keyword">enum </span><span class="var">enum_name</span> {
+    <span class="var">enumerator1</span>,
+    <span class="var">enumerator2</span>,
+    // More enumerators...
+};</code></pre>
+    </div>
+
+    <h4>Example of Enum Definition:</h4>
+    <div class="code">
+        <pre><code><span class="keyword">enum</span> <span class="var">Day</span> {
+    <span class="var">SUNDAY</span>,
+    <span class="var">MONDAY</span>,
+    <span class="var">TUESDAY</span>,
+    <span class="var">WEDNESDAY</span>,
+    <span class="var">THURSDAY</span>,
+    <span class="var">FRIDAY</span>,
+    <span class="var">SATURDAY</span>
+};</code></pre>
+    </div>
+
+    <p>In this example, <span class="var">Day</span> is the name of the enum, and <span class="var">SUNDAY</span>, <span class="var">MONDAY</span>, etc., are the enumerators. By default, <span class="var">SUNDAY</span> has the value 0, <span class="var">MONDAY</span> has the value 1, and so on.</p>
+
+    <h4>Accessing Enum Values:</h4>
+    <p>You can access enum values using dot notation (<code class="var">.</code>) with the enum name and the enumerator name. Enums are often used in switch statements or to represent states or options in your program.</p>
+    <div class="code">
+        <pre><code><span class="keyword">enum</span> <span class="var">Day</span> today = <span class="var">MONDAY</span>;</code></pre>
+    </div>
+
+    <h4>Using Enums in Switch Statements:</h4>
+    <p>Enums are commonly used in switch statements to improve code readability and maintainability.</p>
+    <div class="code">
+        <pre><code><span class="keyword">switch</span> (today) {
+    <span class="keyword">case</span> <span class="var">MONDAY</span>:
+        <span class="function">printf</span>(<span class="string">"Today is Monday.\n"</span>);
+        <span class="keyword">break</span>;
+    <span class="keyword">case</span> <span class="var">TUESDAY</span>:
+        <span class="function">printf</span>(<span class="string">"Today is Tuesday.\n"</span>);
+        <span class="keyword">break</span>;
+    <span class="comment">// More cases...</span>
+    <span class="keyword">default</span>:
+        <span class="function">printf</span>(<span class="string">"Invalid day.\n"</span>);
+        <span class="keyword">break</span>;
+}</code></pre>
+    </div>
+
+    <h4>Custom Values for Enumerators:</h4>
+    <p>You can specify custom values for enumerators by explicitly assigning them.</p>
+    <div class="code">
+        <pre><code><span class="keyword">enum</span> <span class="var">Month</span> {
+    <span class="var">JANUARY</span> = 1,
+    <span class="var">FEBRUARY</span>,
+    <span class="var">MARCH</span>,
+    <span class="comment">// More months...</span>
+};</code></pre>
+    </div>
+    <p>In this example, <span class="var">JANUARY</span> has the value 1, <span class="var">FEBRUARY</span> has the value 2, and so on. The subsequent enumerators will continue incrementing from the last specified value.</p>
+
+    <p>Enums provide a convenient way to define named constants and improve code readability by giving meaningful names to integral values. They are widely used in C programming for representing a fixed set of related values.</p>
+
+</div>
+
 
 
     

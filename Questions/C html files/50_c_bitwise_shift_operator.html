@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>multi-dimensional arrays</title>
+  <title>bitwise shift</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -52,6 +52,48 @@
 </head>
 <body>
 
+  <body>
+    <div class="container">
+  
+      <h3>Bitwise Shift Operators in C</h3>
+  
+      <p>Bitwise shift operators are used in C (and many other programming languages) to shift the bits of a binary number left or right. There are two main bitwise shift operators:</p>
+  
+      <h4>Left Shift Operator (<span class="keyword">&lt;&lt;</span>):</h4>
+      <p>This operator shifts the bits of a number to the left by a specified number of positions. It effectively multiplies the number by 2 for each shift to the left. The syntax is:</p>
+      <pre><code>result = value <span class="keyword">&lt;&lt;</span> n;</code></pre>
+      <p>Here, value is the number whose bits are to be shifted, and n is the number of positions to shift the bits.</p>
+  
+      <h4>Right Shift Operator (<span class="keyword">&gt;&gt;</span>):</h4>
+      <p>This operator shifts the bits of a number to the right by a specified number of positions. It effectively divides the number by 2 for each shift to the right. The syntax is:</p>
+      <pre><code>result = value <span class="keyword">&gt;&gt;</span> n;</code></pre>
+      <p>Here, value is the number whose bits are to be shifted, and n is the number of positions to shift the bits.</p>
+  
+      <h4>Usage example:</h4>
+      <pre><code>#include <span class="var">&lt;stdio.h&gt;</span>
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">int</span> num = 10; <span class="comment">// binary representation: 0000 1010</span>
+  
+      <span class="comment">// Left shift</span>
+      <span class="keyword">int</span> shifted_left = num <span class="keyword">&lt;&lt;</span> 2; <span class="comment">// Shifts bits of num two positions to the left</span>
+      <span class="comment">// Result: 0010 1000 (equals 40 in decimal)</span>
+  
+      <span class="comment">// Right shift</span>
+      <span class="keyword">int</span> shifted_right = num <span class="keyword">&gt;&gt;</span> 1; <span class="comment">// Shifts bits of num one position to the right</span>
+      <span class="comment">// Result: 0000 0101 (equals 5 in decimal)</span>
+  
+      <span class="function">printf</span>(<span class="var">"Left shifted result: %d\n"</span>, shifted_left);
+      <span class="function">printf</span>(<span class="var">"Right shifted result: %d\n"</span>, shifted_right);
+  
+      <span class="keyword">return</span> 0;
+  }</code></pre>
+  
+      <p>Bitwise shift operators are commonly used in tasks like implementing multiplication and division by powers of 2, manipulating bit-level representations of data, and optimizing code for certain operations.</p>
+  
+    </div>
+  </body>
+  
 
     
 </body>
