@@ -1,9 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>62_c_function_pointers.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pointer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>62_c_function_pointers.html</h1>
+
+  <div class="container">
+
+    <p><strong style="color: rgb(250, 119, 32);">Declaration of Function Pointer:</strong></p>
+    <p>Start by declaring a function pointer variable. This is similar to declaring a regular function, but instead of specifying the function's return type and parameter types, you specify the return type and parameter types of the function that the pointer will point to.</p>
+    <p><strong>Syntax:</strong> <code>return_type (*<span style="color: green;">pointer_name</span>)(parameter_types);</code></p>
+    
+    <p><strong style="color: rgb(250, 119, 32);">Assignment of Function Address:</strong></p>
+    <p>Assign the address of a function to the function pointer variable. This is done using the address-of operator <code>&amp;</code> followed by the function name.</p>
+    <p><strong>Example:</strong> <code><span style="color: green;">pointer_name</span> = &amp;function_name;</code></p>
+    
+    <p><strong style="color: rgb(250, 119, 32);">Indirect Invocation of Function:</strong></p>
+    <p>Call the function indirectly through the function pointer variable. This is done by dereferencing the function pointer using the dereference operator <code>*</code> or by simply using the function pointer variable name followed by the parameter list in parentheses.</p>
+    <p><strong>Example:</strong> <code>result = (*<span style="color: green;">pointer_name</span>)(arguments);</code> or <code>result = <span style="color: green;">pointer_name</span>(arguments);</code></p>
+    
+    <p>Here's a summarized example applying these steps:</p>
+
+    
+      <div class="code">
+          <pre><code>  #include &lt;stdio.h&gt;
+  
+  <span class="comment">// Step 1: Declaration of Function Pointer</span>
+  <span class="keyword">int</span> (*operation)(<span class="keyword">int</span>, <span class="keyword">int</span>);
+  
+  <span class="comment">// Function declarations</span>
+  <span class="keyword">int</span> add(<span class="keyword">int</span> a, <span class="keyword">int</span> b);
+  <span class="keyword">int</span> subtract(<span class="keyword">int</span> a, <span class="keyword">int</span> b);
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="comment">// Step 2: Assignment of Function Address</span>
+      operation = &amp;add;
+  
+      <span class="comment">// Step 3: Indirect Invocation of Function</span>
+      <span class="keyword">int</span> result = operation(<span class="number">5</span>, <span class="number">3</span>);
+      <span class="function">printf</span>(<span class="string">"Result of addition: %d\n"</span>, result);
+  
+      <span class="comment">// Change the function assigned to the function pointer</span>
+      operation = &amp;subtract;
+      result = operation(<span class="number">5</span>, <span class="number">3</span>);
+      <span class="function">printf</span>(<span class="string">"Result of subtraction: %d\n"</span>, result);
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+  
+  <span class="comment">// Function definitions</span>
+  <span class="keyword">int</span> add(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+      <span class="keyword">return</span> a + b;
+  }
+  
+  <span class="keyword">int</span> subtract(<span class="keyword">int</span> a, <span class="keyword">int</span> b) {
+      <span class="keyword">return</span> a - b;
+  }</code></pre>
+      </div>
+  
+      <p><b>Output:</b></p>
+  
+      <div class="code">
+          <pre><code>  Result of addition: 8
+  Result of subtraction: 2</code></pre>
+      </div>
+ 
+    
+  </div>
+    
 </body>
 </html>

@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>74_c_purpose_of_volatile_keyword.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>volatile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>74_c_purpose_of_volatile_keyword.html</h1>
+
+  <div class="container">
+
+    <p>In <strong>C</strong>, the <strong>volatile</strong> keyword is used to indicate that a variable may be changed at any time by external factors that are beyond the control or prediction of the compiler. When you declare a variable as volatile, you're informing the compiler that its value can be changed unexpectedly, and therefore the compiler should not optimize or make assumptions about the variable's value or behavior.</p>
+
+    <p>The primary purpose of using the <strong>volatile</strong> keyword is to prevent the compiler from performing certain optimizations that could lead to incorrect behavior when dealing with memory-mapped hardware registers, signal handlers, or variables accessed by multiple threads in a concurrent program.</p>
+    
+    <p><b>Example: </b></p>
+
+    
+      <div class="code">
+          <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+  
+  <span class="keyword">volatile</span> <span class="keyword">int</span> flag = <span class="number">0</span>; <span class="comment">// Declaring a volatile variable</span>
+  
+  <span class="function">void</span> toggle_flag() {
+      flag = !flag; <span class="comment">// Modify the volatile variable</span>
+  }
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">while</span> (<span class="number">1</span>) {
+          toggle_flag(); <span class="comment">// Function call that changes the value of the volatile variable</span>
+          printf(<span class="string">"Flag: %d\n"</span>, flag); <span class="comment">// Access the volatile variable</span>
+      }
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+          </code></pre>
+      </div>
+ 
+      <p><b>Output:</b></p>
+      <div class="code">
+        <pre><code>  Flag: 1
+  Flag: 0
+  Flag: 1
+  Flag: 0
+  Flag: 1
+  ...
+          </code></pre>
+            </div>  
+
+  </div>
+    
 </body>
 </html>

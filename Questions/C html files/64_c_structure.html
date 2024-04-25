@@ -1,9 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>64_c_structure.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>structure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+  </style>
 </head>
 <body>
-<h1>64_c_structure.html</h1>
+  <div class="container">
+
+    <p>In C, a structure is a user-defined data type that allows you to group together variables of different data types under a single name. Each variable within a structure is called a member or field. Structures provide a way to organize related data items more logically and efficiently.</p>
+<p><b>Example:</b></p>
+
+  <div class="code">
+      <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+
+<span class="comment">  // Define a structure named "Person"</span>
+<span class="keyword">  struct</span> Person {
+  <span class="keyword">char</span> name[<span class="number">50</span>];
+  <span class="keyword">int</span> age;
+  <span class="keyword">float</span> height;
+ };
+
+  <span class="keyword">int</span> <span class="function">main</span>() {
+  <span class="comment">// Declare a variable of type "Person"</span>
+  <span class="keyword">struct</span> Person person1;
+
+  <span class="comment">// Access and modify structure members</span>
+  strcpy(person1.name, <span class="string">"John"</span>);
+  person1.age = <span class="number">30</span>;
+  person1.height = <span class="number">5.9</span>;
+
+  <span class="comment">// Print structure members</span>
+  printf(<span class="string">"Name: %s\n"</span>, person1.name);
+  printf(<span class="string">"Age: %d\n"</span>, person1.age);
+  printf(<span class="string">"Height: %.2f\n"</span>, person1.height);
+
+  <span class="keyword">return</span> <span class="number">0</span>;
+ }</code></pre>
+  </div>
+
+    <p><b>output:</b></p>
+
+    <div class="code">
+        <pre><code>  Name: John
+  Age: 30
+  Height: 5.90</code></pre>
+    </div>
+
+  <p>Now, let's discuss how to pass a structure to a function:</p>
+
+  <p><strong>Passing by Value:</strong></p>
+  <ul>
+      <li>When you pass a structure to a function by value, a copy of the entire structure is made and passed to the function.</li>
+      <li>Any modifications made to the structure inside the function do not affect the original structure in the calling function.</li>
+  </ul>
+  
+  <p><strong>Passing by Reference:</strong></p>
+  <ul>
+      <li>When you pass a structure to a function by reference (using a pointer), you pass the address of the structure to the function.</li>
+      <li>This allows the function to directly modify the original structure in the calling function.</li>
+  </ul>
+  
+  <p><b>Example:</b></p>
+  
+    <div class="code">
+        <pre><code><span class="preprocessor">#include</span> &lt;stdio.h&gt;
+
+<span class="comment">// Define a structure named "Person"</span>
+<span class="keyword">struct</span> Person {
+    <span class="keyword">char</span> name[<span class="number">50</span>];
+    <span class="keyword">int</span> age;
+    <span class="keyword">float</span> height;
+};
+
+<span class="comment">// Function prototypes</span>
+<span class="keyword">void</span> displayByValue(<span class="keyword">struct</span> Person p);
+<span class="keyword">void</span> displayByReference(<span class="keyword">struct</span> Person *p);
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="comment">// Declare a variable of type "Person"</span>
+    <span class="keyword">struct</span> Person person1 = {<span class="string">"John"</span>, <span class="number">30</span>, <span class="number">5.9</span>};
+
+    <span class="comment">// Pass structure by value</span>
+    displayByValue(person1);
+
+    <span class="comment">// Pass structure by reference</span>
+    displayByReference(&person1);
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}
+
+<span class="comment">// Function to display structure by value</span>
+<span class="keyword">void</span> displayByValue(<span class="keyword">struct</span> Person p) {
+    printf(<span class="string">"Displaying by value:\n"</span>);
+    printf(<span class="string">"Name: %s\n"</span>, p.name);
+    printf(<span class="string">"Age: %d\n"</span>, p.age);
+    printf(<span class="string">"Height: %.2f\n"</span>, p.height);
+}
+
+<span class="comment">// Function to display structure by reference</span>
+<span class="keyword">void</span> displayByReference(<span class="keyword">struct</span> Person *p) {
+    printf(<span class="string">"Displaying by reference:\n"</span>);
+    printf(<span class="string">"Name: %s\n"</span>, p->name);
+    printf(<span class="string">"Age: %d\n"</span>, p->age);
+    printf(<span class="string">"Height: %.2f\n"</span>, p->height);
+}</code></pre>
+    </div>
+
+      <p><b>Output:</b></p>
+  
+      <div class="code">
+  <pre><code>  Displaying by value:
+    Name: John
+    Age: 30
+    Height: 5.90<br>
+  Displaying by reference:
+    Name: John
+    Age: 30
+    Height: 5.90</code></pre>
+      </div>
+
+    
+  </div>
+    
+    
 </body>
 </html>

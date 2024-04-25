@@ -1,9 +1,142 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>71_c_union.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>union</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>71_c_union.html</h1>
+
+    <div class="container">
+
+      <p>In <strong>C</strong>, a <strong>union</strong> is a composite data type that allows you to store different types of data in the same memory location. Like a structure, a union enables you to group multiple variables together.</p>
+      <p>All members of a union share the same memory space, and modifying one member may affect the values of other members.</p>
+      
+      <p>Here's a comparison between a <strong>structure</strong> and a <strong>union</strong> in C:</p>
+      
+      
+          <p><strong>1. Structure:</strong></p>
+          <ul>
+              <li>A structure allows you to group multiple variables of different types under a single name.</li>
+              <li>Each member of a structure has its own separate memory space.</li>
+              <li>Memory is allocated for each member independently, based on its size and type.</li>
+              <li>You can access individual members of a structure independently.</li>
+          </ul>
+      
+          <p><b>Example:</b></p>
+          <div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
+            <pre><code><span class="keyword">struct</span> Person {
+     <span class="keyword">char</span> name[<span class="number">50</span>];
+     <span class="keyword">int</span> age;
+     <span class="keyword">float</span> height;
+  };</code></pre>
+        </div>
+        
+        <p><strong>2. Union:</strong></p>
+<ul>
+    <li>A union, like a structure, allows you to group multiple variables of different types under a single name.</li>
+    <li>All members of a union share the same memory space.</li>
+    <li>Memory is allocated for the largest member of the union, and all other members share that memory space.</li>
+    <li>Accessing one member may overwrite the values of other members, as they occupy the same memory location.</li>
+</ul>
+<p><b>Example:</b></p>
+<div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
+  <pre><code><span class="keyword">union</span> Data {
+  <span class="keyword">int</span> intValue;
+  <span class="keyword">float</span> floatValue;
+  <span class="keyword">char</span> stringValue[<span class="number">20</span>];
+};</code></pre>
+</div>
+
+
+<p><b>Here's how you might use a union:</b></p>
+
+  <div class="code">
+      <pre><code><span class="preprocessor">#include</span> &lt;stdio.h&gt;
+
+<span class="keyword">union</span> Data {
+  <span class="keyword">int</span> intValue;
+  <span class="keyword">float</span> floatValue;
+  <span class="keyword">char</span> stringValue[<span class="number">20</span>];
+};
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+  <span class="keyword">union</span> Data data;
+
+  data.intValue = <span class="number">10</span>;
+  printf(<span class="string">"intValue: %d\n"</span>, data.intValue);
+
+  data.floatValue = <span class="number">3.14</span>;
+  printf(<span class="string">"floatValue: %.2f\n"</span>, data.floatValue);
+
+  strcpy(data.stringValue, <span class="string">"Hello"</span>);
+  printf(<span class="string">"stringValue: %s\n"</span>, data.stringValue);
+
+  <span class="keyword">return</span> <span class="number">0</span>;
+}
+      </code></pre>
+</div>
+
+<p><b>Output:</b></p>
+
+<div class="code">
+  <pre><code>  intValue: 10
+  floatValue: 3.14
+  stringValue: Hello</code></pre>
+      </div>
+
+      <p>In this example, we define a <strong>union Data</strong> that can hold an integer, a float, or a string. Since all members share the same memory space, modifying one member (for example, <code>intValue</code>) will affect the values of other members (<code>floatValue</code> and <code>stringValue</code>).</p>
+
+
+    </div>
+    
 </body>
 </html>

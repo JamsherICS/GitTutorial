@@ -1,9 +1,91 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>72_c_static_variables.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>static</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>72_c_static_variables.html</h1>
+
+    <div class="container">
+
+      <p>In C, a <strong>static variable</strong> is a type of variable that retains its value between function calls and exists for the entire duration of the program. Unlike automatic variables, which are created and destroyed every time a function is called, static variables are initialized only once, and their value persists across function calls within the same scope.</p>
+
+      <p><b>Example: </b></p>
+ <div class="code">
+            <pre><code><span class="preprocessor"> #include</span> &lt;stdio.h&gt;
+    
+ <span class="function">void</span> increment() {
+     <span class="keyword">static</span> <span class="keyword">int</span> count = <span class="number">0</span>;  <span class="comment">// Static variable</span>
+     count++;
+     printf(<span class="string">"Count: %d\n"</span>, count);
+ }
+ 
+ <span class="keyword">int</span> <span class="function">main</span>() {
+     increment();  <span class="comment">// Output: Count: 1</span>
+     increment();  <span class="comment">// Output: Count: 2</span>
+     increment();  <span class="comment">// Output: Count: 3</span>
+     <span class="keyword">return</span> <span class="number">0</span>;
+ }
+         </code></pre>
+        </div>
+
+        <p><b>Output:</b></p>
+
+        <div class="code">
+          <pre><code>  Count: 1
+  Count: 2
+  Count: 3</code></pre>
+              </div>  
+    </div>
+    
 </body>
 </html>

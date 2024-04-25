@@ -66,8 +66,8 @@ How do you implement a linked list in C?
 What is recursion? Write a recursive function to calculate factorial in C.
 Explain the concept of pointers to pointers in C.
 What are header files? How do you create your own header file in C?
-Explain the concept of function overloading in C.
-How do you implement operator overloading in C?
+Explain the concept of function overloading.
+What is operator overloading?
 What is a union in C? How is it different from a structure?
 Explain the concept of static variables in C.
 How do you implement exception handling in C?

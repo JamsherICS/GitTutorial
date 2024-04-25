@@ -1,9 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>54_c_find_length_of_string.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>length</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>54_c_find_length_of_string.html</h1>
+<div class="container">
+
+  <p><span style="color: blue;">In C</span>, you can find the <span style="color: green;">length of a string</span> using the <code><span style="color: purple;">strlen()</span></code> function, which is available in the <code><span style="color: orange;">&lt;string.h&gt;</span></code> header file.</p>
+  <p><b>Here's how you can find:</b></p>
+
+    <div class="code">
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">char</span> str[] = <span class="string">"Hello, World!"</span>;
+    
+    <span class="comment">// Using strlen() function</span>
+    <span class="keyword">int</span> length = <span class="function">strlen</span>(str);
+    
+    <span class="function">printf</span>(<span class="string">"Length of the string: %d\n"</span>, length);
+    
+    <span class="keyword">return</span> 0;
+}</code></pre>
+    </div>
+
+    <p><b>Output:</b></p>
+
+    <div class="code">
+        <pre><code>Length of the string: 13</code></pre>
+    </div>
+
+  <p>In this example, the <code><span style="color: purple;">strlen()</span></code> function takes a <span style="color: brown;">pointer to a null-terminated character array</span> (string) as its argument and returns the length of the string excluding the <span style="color: gray;">null character <code>\0</code></span>. The length is then printed to the console.</p>
+  
+
+</div>
+    
+    
 </body>
 </html>

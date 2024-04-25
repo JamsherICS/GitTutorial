@@ -1,9 +1,157 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>63_c_implement_stack_using_arrays.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>stack</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+  </style>
 </head>
 <body>
-<h1>63_c_implement_stack_using_arrays.html</h1>
+
+  <div class="container">
+    <p>Implementing a stack using arrays in C involves defining the necessary operations such as <strong>push</strong> (adding an element to the top of the stack) and <strong>pop</strong> (removing the top element from the stack), as well as maintaining the stack's state using an array. Here's a basic example:</p>
+
+      <p>The following C code implements a stack using an array:</p>
+  
+      <div class="code">
+          <pre><code><span class="keyword">  #include</span> &lt;stdio.h&gt;
+  <span class="keyword">#include</span> &lt;stdlib.h&gt; <span class="comment">// For dynamic memory allocation</span>
+  
+  <span class="preprocessor">#define</span> MAX_SIZE 100 <span class="comment">// Maximum size of the stack</span>
+  
+  <span class="comment">// Structure to represent the stack</span>
+  <span class="keyword">typedef struct</span> {
+      <span class="keyword">int</span> arr[<span class="preprocessor">MAX_SIZE</span>];
+      <span class="keyword">int</span> top;
+  } Stack;
+  
+  <span class="comment">// Function prototypes</span>
+  <span class="keyword">void</span> initialize(Stack *stack);
+  <span class="keyword">int</span> isFull(Stack *stack);
+  <span class="keyword">int</span> isEmpty(Stack *stack);
+  <span class="keyword">void</span> push(Stack *stack, <span class="keyword">int</span> element);
+  <span class="keyword">int</span> pop(Stack *stack);
+  <span class="keyword">int</span> peek(Stack *stack);
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      Stack stack;
+      initialize(&amp;stack);
+  
+      <span class="comment">// Push elements onto the stack</span>
+      push(&amp;stack, <span class="number">10</span>);
+      push(&amp;stack, <span class="number">20</span>);
+      push(&amp;stack, <span class="number">30</span>);
+  
+      <span class="comment">// Pop elements from the stack and print them</span>
+      <span class="function">printf</span>(<span class="string">"Popped element: %d\n"</span>, pop(&amp;stack));
+      <span class="function">printf</span>(<span class="string">"Popped element: %d\n"</span>, pop(&amp;stack));
+  
+      <span class="comment">// Peek at the top element without removing it</span>
+      <span class="function">printf</span>(<span class="string">"Top element: %d\n"</span>, peek(&amp;stack));
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+  
+  <span class="comment">// Function to initialize the stack</span>
+  <span class="keyword">void</span> initialize(Stack *stack) {
+      stack-&gt;top = -<span class="number">1</span>; <span class="comment">// Initialize top to -1 (empty stack)</span>
+  }
+  
+  <span class="comment">// Function to check if the stack is full</span>
+  <span class="keyword">int</span> isFull(Stack *stack) {
+      <span class="keyword">return</span> stack-&gt;top == <span class="preprocessor">MAX_SIZE</span> - <span class="number">1</span>;
+  }
+  
+  <span class="comment">// Function to check if the stack is empty</span>
+  <span class="keyword">int</span> isEmpty(Stack *stack) {
+      <span class="keyword">return</span> stack-&gt;top == -<span class="number">1</span>;
+  }
+  
+  <span class="comment">// Function to push an element onto the stack</span>
+  <span class="keyword">void</span> push(Stack *stack, <span class="keyword">int</span> element) {
+      <span class="keyword">if</span> (isFull(stack)) {
+          <span class="function">printf</span>(<span class="string">"Stack overflow\n"</span>);
+          <span class="keyword">return</span>;
+      }
+      stack-&gt;arr[++stack-&gt;top] = element;
+  }
+  
+  <span class="comment">// Function to pop an element from the stack</span>
+  <span class="keyword">int</span> pop(Stack *stack) {
+      <span class="keyword">if</span> (isEmpty(stack)) {
+          <span class="function">printf</span>(<span class="string">"Stack underflow\n"</span>);
+          <span class="function">exit</span>(<span class="preprocessor">EXIT_FAILURE</span>);
+      }
+      <span class="keyword">return</span> stack-&gt;arr[stack-&gt;top--];
+  }
+  
+  <span class="comment">// Function to peek at the top element of the stack</span>
+  <span class="keyword">int</span> peek(Stack *stack) {
+      <span class="keyword">if</span> (isEmpty(stack)) {
+          <span class="function">printf</span>(<span class="string">"Stack is empty\n"</span>);
+          <span class="function">exit</span>(<span class="preprocessor">EXIT_FAILURE</span>);
+      }
+      <span class="keyword">return</span> stack-&gt;arr[stack-&gt;top];
+  }</code></pre>
+      </div>
+
+        <p><b></b>output</b>:</p>
+    
+        <div class="code">
+            <pre><code>  Popped element: 30
+  Popped element: 20
+  Top element: 10</code></pre>
+        </div>
+    
+
+  </div>
+    
 </body>
 </html>

@@ -1,9 +1,110 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>60_c_largest_and_smallest_elements.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>large</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>60_c_largest_and_smallest_elements.html</h1>
+
+  <div class="container">
+
+    <p>You can find the largest and smallest elements in an array by iterating through the array and keeping track of the current largest and smallest elements encountered. Here's how you can do it in C:</p>
+  
+      <div class="code">
+          <pre><code>  #include &lt;stdio.h&gt;
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">int</span> arr[] = {<span class="number">5</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">7</span>, <span class="number">4</span>, <span class="number">2</span>};
+      <span class="keyword">int</span> n = <span class="keyword">sizeof</span>(arr) / <span class="keyword">sizeof</span>(arr[<span class="number">0</span>]); <span class="comment">// Calculate the size of the array</span>
+  
+      <span class="comment">// Initialize variables to store the largest and smallest elements</span>
+      <span class="keyword">int</span> largest = arr[<span class="number">0</span>];
+      <span class="keyword">int</span> smallest = arr[<span class="number">0</span>];
+  
+      <span class="comment">// Iterate through the array</span>
+      <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++) {
+          <span class="comment">// Update the largest element if a larger element is found</span>
+          <span class="keyword">if</span> (arr[i] &gt; largest) {
+              largest = arr[i];
+          }
+          <span class="comment">// Update the smallest element if a smaller element is found</span>
+          <span class="keyword">if</span> (arr[i] &lt; smallest) {
+              smallest = arr[i];
+          }
+      }
+  
+      <span class="function">printf</span>(<span class="string">"Largest element: %d\n"</span>, largest);
+      <span class="function">printf</span>(<span class="string">"Smallest element: %d\n"</span>, smallest);
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }</code></pre>
+      </div>
+  
+      <p><b>Output:</b></p>
+  
+      <div class="code">
+          <pre><code>  Largest element: 9
+  Smallest element: 1</code></pre>
+      </div>
+
+
+      <p><strong>In this example:</strong></p>
+
+<ul>
+    <li>We initialize variables <em>largest</em> and <em>smallest</em> with the first element of the array.</li>
+    <li>We iterate through the array starting from the second element (i = 1) and update <em>largest</em> and <em>smallest</em> as necessary.</li>
+    <li>After iterating through the array, we print the values of <em>largest</em> and <em>smallest</em>.</li>
+</ul>
+
+
+</div>
+    
+    
 </body>
 </html>

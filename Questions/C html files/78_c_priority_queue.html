@@ -1,9 +1,198 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>78_c_priority_queue.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>78_c_priority_queue.html</h1>
+
+  <div class="container">
+
+    <p>Implementing a priority queue in C typically involves using a data structure that allows efficient insertion and removal of elements based on their priority. One common approach is to use a binary heap, which is a complete binary tree where each node has a priority greater than or equal to the priorities of its children. Here's how you can implement a priority queue using a binary heap in C:</p>
+    <p><b>Example: </b></p>
+
+    
+      <div class="code">
+        <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+  <span class="preprocessor">#include</span> &lt;stdlib.h&gt;
+  
+  <span class="comment">// Define the maximum size of the priority queue</span>
+  <span class="keyword">#define</span> MAX_SIZE <span class="number">100</span>
+  
+  <span class="comment">// Define the structure for each element in the priority queue</span>
+  <span class="keyword">typedef struct</span> {
+      <span class="keyword">int</span> priority;
+      <span class="keyword">int</span> data;
+  } PriorityQueueNode;
+  
+  <span class="comment">// Define the structure for the priority queue</span>
+  <span class="keyword">typedef struct</span> {
+      PriorityQueueNode elements[MAX_SIZE];
+      <span class="keyword">int</span> size;
+  } PriorityQueue;
+  
+  <span class="comment">// Function to initialize the priority queue</span>
+  PriorityQueue* initializePriorityQueue() {
+      PriorityQueue* pq = (PriorityQueue*)malloc(<span class="keyword">sizeof</span>(PriorityQueue));
+      <span class="keyword">if</span> (pq == NULL) {
+          printf(<span class="string">"Memory allocation failed\n"</span>);
+          exit(<span class="number">1</span>);
+      }
+      pq-&gt;size = <span class="number">0</span>;
+      <span class="keyword">return</span> pq;
+  }
+  
+  <span class="comment">// Function to swap two priority queue nodes</span>
+  <span class="keyword">void</span> swap(PriorityQueueNode* a, PriorityQueueNode* b) {
+      PriorityQueueNode temp = *a;
+      *a = *b;
+      *b = temp;
+  }
+  
+  <span class="comment">// Function to heapify the priority queue (upward)</span>
+  <span class="keyword">void</span> heapifyUp(PriorityQueue* pq, <span class="keyword">int</span> index) {
+      <span class="keyword">int</span> parent = (index - <span class="number">1</span>) / <span class="number">2</span>;
+      <span class="keyword">while</span> (index &gt; <span class="number">0</span> &amp;&amp; pq-&gt;elements[index].priority &lt; pq-&gt;elements[parent].priority) {
+          swap(&amp;pq-&gt;elements[index], &amp;pq-&gt;elements[parent]);
+          index = parent;
+          parent = (index - <span class="number">1</span>) / <span class="number">2</span>;
+      }
+  }
+  
+  <span class="comment">// Function to heapify the priority queue (downward)</span>
+  <span class="keyword">void</span> heapifyDown(PriorityQueue* pq, <span class="keyword">int</span> index) {
+      <span class="keyword">int</span> leftChild = <span class="number">2</span> * index + <span class="number">1</span>;
+      <span class="keyword">int</span> rightChild = <span class="number">2</span> * index + <span class="number">2</span>;
+      <span class="keyword">int</span> smallest = index;
+  
+      <span class="keyword">if</span> (leftChild &lt; pq-&gt;size &amp;&amp; pq-&gt;elements[leftChild].priority &lt; pq-&gt;elements[smallest].priority) {
+          smallest = leftChild;
+      }
+      <span class="keyword">if</span> (rightChild &lt; pq-&gt;size &amp;&amp; pq-&gt;elements[rightChild].priority &lt; pq-&gt;elements[smallest].priority) {
+          smallest = rightChild;
+      }
+  
+      <span class="keyword">if</span> (smallest != index) {
+          swap(&amp;pq-&gt;elements[index], &amp;pq-&gt;elements[smallest]);
+          heapifyDown(pq, smallest);
+      }
+  }
+  
+  <span class="comment">// Function to insert an element into the priority queue</span>
+  <span class="keyword">void</span> insert(PriorityQueue* pq, <span class="keyword">int</span> priority, <span class="keyword">int</span> data) {
+      <span class="keyword">if</span> (pq-&gt;size &gt;= MAX_SIZE) {
+          printf(<span class="string">"Priority queue overflow\n"</span>);
+          <span class="keyword">return</span>;
+      }
+      pq-&gt;elements[pq-&gt;size].priority = priority;
+      pq-&gt;elements[pq-&gt;size].data = data;
+      heapifyUp(pq, pq-&gt;size);
+      pq-&gt;size++;
+  }
+  
+  <span class="comment">// Function to remove and return the element with the highest priority from the priority queue</span>
+  PriorityQueueNode extractMin(PriorityQueue* pq) {
+      <span class="keyword">if</span> (pq-&gt;size == <span class="number">0</span>) {
+          printf(<span class="string">"Priority queue underflow\n"</span>);
+          exit(<span class="number">1</span>);
+      }
+      PriorityQueueNode minElement = pq-&gt;elements[<span class="number">0</span>];
+      pq-&gt;elements[<span class="number">0</span>] = pq-&gt;elements[pq-&gt;size - <span class="number">1</span>];
+      pq-&gt;size--;
+      heapifyDown(pq, <span class="number">0</span>);
+      <span class="keyword">return</span> minElement;
+  }
+  
+  <span class="comment">// Function to check if the priority queue is empty</span>
+  <span class="keyword">int</span> isEmpty(PriorityQueue* pq) {
+      <span class="keyword">return</span> pq-&gt;size == <span class="number">0</span>;
+  }
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      PriorityQueue* pq = initializePriorityQueue();
+  
+      insert(pq, <span class="number">3</span>, <span class="number">30</span>);
+      insert(pq, <span class="number">1</span>, <span class="number">10</span>);
+      insert(pq, <span class="number">2</span>, <span class="number">20</span>);
+  
+      <span class="keyword">while</span> (!isEmpty(pq)) {
+          PriorityQueueNode minElement = extractMin(pq);
+          printf(<span class="string">"Priority: %d, Data: %d\n"</span>, minElement.priority, minElement.data);
+      }
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+          </code></pre>
+      </div>
+  
+
+    <p><b>Output:</b></p>
+
+      <div class="code">
+    <pre><code>   Priority: 1, Data: 10
+   Priority: 2, Data: 20
+   Priority: 3, Data: 30</code></pre>
+            </div> 
+
+    <p><strong>In this implementation:</strong></p>
+<ul>
+    <li>We define a <strong>PriorityQueueNode</strong> structure to represent each element in the priority queue. Each node contains an integer data element and an integer priority.</li>
+    <li>We define a <strong>PriorityQueue</strong> structure to represent the priority queue, which contains an array of <em>PriorityQueueNode</em> elements and an integer size representing the number of elements in the queue.</li>
+    <li>We provide functions to initialize the priority queue, insert an element into the queue, remove and return the element with the highest priority from the queue, and check if the queue is empty.</li>
+    <li>We demonstrate the usage of the priority queue by inserting elements with different priorities, extracting and printing elements in order of their priority.</li>
+</ul>
+
+    
+  </div>
+    
 </body>
 </html>

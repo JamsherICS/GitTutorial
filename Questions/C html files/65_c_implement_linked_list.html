@@ -1,9 +1,196 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>65_c_implement_linked_list.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>linkedlist</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+  </style>
 </head>
 <body>
-<h1>65_c_implement_linked_list.html</h1>
+
+  <div class="container">
+
+    <p>Implementing a linked list in C involves defining a structure to represent the nodes of the list and implementing various operations such as insertion, deletion, and traversal. Here's a basic implementation of a singly linked list:</p>
+    
+    <p><b>Example:</b></p>
+
+      <div class="code">
+          <pre><code>  <span class="preprocessor">#include</span> &lt;stdio.h&gt;
+  <span class="preprocessor">#include</span> &lt;stdlib.h&gt;
+  
+  <span class="comment">// Define the structure for a node</span>
+  <span class="keyword">struct</span> Node {
+      <span class="keyword">int</span> data;
+      <span class="keyword">struct</span> Node *next;
+  };
+  
+  <span class="comment">// Function prototypes</span>
+  <span class="keyword">void</span> insertAtBeginning(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> data);
+  <span class="keyword">void</span> insertAtEnd(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> data);
+  <span class="keyword">void</span> deleteNode(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> key);
+  <span class="keyword">void</span> displayList(<span class="keyword">struct</span> Node *head);
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">struct</span> Node *head = NULL;
+  
+      <span class="comment">// Insert elements into the linked list</span>
+      insertAtEnd(&amp;head, <span class="number">10</span>);
+      insertAtEnd(&amp;head, <span class="number">20</span>);
+      insertAtEnd(&amp;head, <span class="number">30</span>);
+  
+      <span class="comment">// Display the linked list</span>
+      printf(<span class="string">"Linked List: "</span>);
+      displayList(head);
+  
+      <span class="comment">// Delete a node from the linked list</span>
+      deleteNode(&amp;head, <span class="number">20</span>);
+  
+      <span class="comment">// Display the updated linked list</span>
+      printf(<span class="string">"\nLinked List after deletion: "</span>);
+      displayList(head);
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+  
+  <span class="comment">// Function to insert a node at the beginning of the linked list</span>
+  <span class="keyword">void</span> insertAtBeginning(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> data) {
+      <span class="keyword">struct</span> Node *newNode = (<span class="keyword">struct</span> Node *)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Node));
+      newNode-&gt;data = data;
+      newNode-&gt;next = *head;
+      *head = newNode;
+  }
+  
+  <span class="comment">// Function to insert a node at the end of the linked list</span>
+  <span class="keyword">void</span> insertAtEnd(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> data) {
+      <span class="keyword">struct</span> Node *newNode = (<span class="keyword">struct</span> Node *)malloc(<span class="keyword">sizeof</span>(<span class="keyword">struct</span> Node));
+      <span class="keyword">struct</span> Node *temp = *head;
+      newNode-&gt;data = data;
+      newNode-&gt;next = NULL;
+  
+      <span class="keyword">if</span> (*head == NULL) {
+          *head = newNode;
+          <span class="keyword">return</span>;
+      }
+  
+      <span class="keyword">while</span> (temp-&gt;next != NULL) {
+          temp = temp-&gt;next;
+      }
+  
+      temp-&gt;next = newNode;
+  }
+  
+  <span class="comment">// Function to delete a node from the linked list</span>
+  <span class="keyword">void</span> deleteNode(<span class="keyword">struct</span> Node **head, <span class="keyword">int</span> key) {
+      <span class="keyword">struct</span> Node *temp = *head, *prev = NULL;
+  
+      <span class="comment">// If the head node itself holds the key to be deleted</span>
+      <span class="keyword">if</span> (temp != NULL &amp;&amp; temp-&gt;data == key) {
+          *head = temp-&gt;next;
+          free(temp);
+          <span class="keyword">return</span>;
+      }
+  
+      <span class="comment">// Search for the key to be deleted, keep track of the previous node</span>
+      <span class="keyword">while</span> (temp != NULL &amp;&amp; temp-&gt;data != key) {
+          prev = temp;
+          temp = temp-&gt;next;
+      }
+  
+      <span class="comment">// If the key was not present in the linked list</span>
+      <span class="keyword">if</span> (temp == NULL) {
+          <span class="keyword">return</span>;
+      }
+  
+      <span class="comment">// Unlink the node from the linked list</span>
+      prev-&gt;next = temp-&gt;next;
+      free(temp);
+  }
+  
+  <span class="comment">// Function to display the linked list</span>
+  <span class="keyword">void</span> displayList(<span class="keyword">struct</span> Node *head) {
+      <span class="keyword">struct</span> Node *temp = head;
+  
+      <span class="keyword">while</span> (temp != NULL) {
+          printf(<span class="string">"%d "</span>, temp-&gt;data);
+          temp = temp-&gt;next;
+      }
+  }</code></pre>
+      </div>
+
+
+      <p><b>Output:</b></p>
+  
+      <div class="code">
+  <pre><code>  Linked List: 10 20 30
+  Linked List after deletion: 10 30</code></pre>
+      </div>
+
+      <p><strong>Explanation:</strong></p>
+<ul>
+    <li>Initially, the linked list contains elements 10, 20, and 30.</li>
+    <li>After deleting the node with data value 20, the updated linked list contains elements 10 and 30.</li>
+</ul>
+
+  
+      <p>This implementation provides the basic operations for a singly linked list:</p>
+
+      <ul>
+          <li><strong>insertAtBeginning():</strong> Inserts a new node at the beginning of the list.</li>
+          <li><strong>insertAtEnd():</strong> Inserts a new node at the end of the list.</li>
+          <li><strong>deleteNode():</strong> Deletes a node with the specified key from the list.</li>
+          <li><strong>displayList():</strong> Displays the elements of the list.</li>
+      </ul>
+      
+
+
+  </div>
+    
 </body>
 </html>

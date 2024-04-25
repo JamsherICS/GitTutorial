@@ -1,9 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>56_c_concatenate_two_strings.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>concat</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>56_c_concatenate_two_strings.html</h1>
+<div class="container">
+  <p>In C, you can concatenate two strings using the <code>strcat()</code> function, which is available in the <code>&lt;string.h&gt;</code> header file. 
+    <br><br><b>Here's how you can use it:</b></p>
+
+    <div class="code">
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">char</span> str1[<span class="number">50</span>] = <span class="string">"Hello, "</span>;
+    <span class="keyword">char</span> str2[] = <span class="string">"World!"</span>;
+    
+    <span class="comment">// Using strcat() function to concatenate str2 to str1</span>
+    <span class="function">strcat</span>(str1, str2);
+    
+    <span class="function">printf</span>(<span class="string">"Concatenated string: %s\n"</span>, str1);
+    
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+    </div>
+
+    <p><b>Output:</b></p>
+
+    <div class="code">
+        <pre><code>Concatenated string: Hello, World!</code></pre>
+    </div>
+
+    <p>In this example, the <code><span style="color: blue;">strcat()</span></code> function appends the content of <span style="color: green;">str2</span> to the end of <span style="color: red;">str1</span>, modifying <span style="color: red;">str1</span> to contain the concatenated result. It starts copying characters from the null terminator ('<code><span style="color: gray;">\0</span></code>') of <span style="color: red;">str1</span>, which is overwritten by the first character of <span style="color: green;">str2</span>. The concatenation continues until the null terminator of <span style="color: green;">str2</span> is reached. It's important to ensure that <span style="color: red;">str1</span> has enough space to accommodate the concatenated string to avoid buffer overflow.</p>
+
+</div>
 </body>
 </html>

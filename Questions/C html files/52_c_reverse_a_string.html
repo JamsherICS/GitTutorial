@@ -1,9 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>52_c_reverse_a_string.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>reverse</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>52_c_reverse_a_string.html</h1>
+  <div class="container">
+    <p><span style="color: blue;">One common way</span> to <span style="color: green;">reverse a string</span> in C is to use a loop to <span style="color: red;">iterate through the string</span> and <span style="color: purple;">swap characters</span> from the beginning with characters from the end until reaching the middle of the string. <br><br><b>Here's a simple example of how you can do this:</b></p>
+
+    <div class="code">
+        <pre><code>#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+<span class="function">void</span> <span class="function">reverseString</span>(<span class="keyword">char</span>* str) {
+    <span class="keyword">int</span> length = <span class="function">strlen</span>(str);
+    <span class="keyword">int</span> start = 0;
+    <span class="keyword">int</span> end = length - 1;
+
+    <span class="keyword">while</span> (start &lt; end) {
+        <span class="comment">// Swap characters</span>
+        <span class="keyword">char</span> temp = str[start];
+        str[start] = str[end];
+        str[end] = temp;
+
+        <span class="comment">// Move pointers towards the middle</span>
+        start++;
+        end--;
+    }
+}
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">char</span> str[] = <span class="string">"Hello, World!"</span>;
+    
+    <span class="function">printf</span>(<span class="string">"Original string: %s\n"</span>, str);
+    
+    <span class="comment">// Reverse the string</span>
+    <span class="function">reverseString</span>(str);
+    
+    <span class="function">printf</span>(<span class="string">"Reversed string: %s\n"</span>, str);
+    
+    <span class="keyword">return</span> 0;
+}</code></pre>
+    </div>
+
+    <p><b>Output:</b></p>
+
+    <div class="code">
+        <pre><code>Original string: Hello, World!
+Reversed string: !dlroW ,olleH</code></pre>
+    </div>
+
+
+    <p>In this example, the <em><span style="color: teal;">reverseString</span></em> function takes a <span style="color: brown;">pointer to a character array</span> (<code><span style="color: gray;">char* str</span></code>) as its parameter. It calculates the <span style="color: navy;">length of the string</span> using <code><span style="color: maroon;">strlen</span></code>, then iterates through the string using a <code><span style="color: darkcyan;">while</span></code> loop, swapping characters until the start pointer meets or exceeds the end pointer. Finally, it prints the <span style="color: indigo;">reversed string</span> in the <em><span style="color: darkorange;">main</span></em> function.</p>
+  
+</div>
+    
 </body>
 </html>

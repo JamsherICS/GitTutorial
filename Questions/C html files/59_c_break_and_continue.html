@@ -1,9 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>59_c_break_and_continue.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>break</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>59_c_break_and_continue.html</h1>
+
+  <div class="container">
+
+   
+      <strong>Break Statement:</strong>
+      <Ul>
+      <li>The break statement is used to <span style="color: blue;">terminate the loop immediately</span> when a certain condition is met, regardless of whether the loop's condition is true or false.</li>
+      <li>When encountered, <span style="color: blue;">break</span> exits the loop and continues execution with the statement following the loop.</li>
+      <li>It's often used to <span style="color: blue;">exit loops prematurely</span> when a specific condition is satisfied.</li>
+    </Ul>
+
+    <p><b>Example:</b></p>
+  
+    <div class="code">
+        <pre><code>#include &lt;stdio.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i <= <span class="number">10</span>; i++) {
+        <span class="keyword">if</span> (i == <span class="number">5</span>) {
+            <span class="keyword">break</span>; <span class="comment">// Exit the loop when i equals 5</span>
+        }
+        <span class="function">printf</span>(<span class="string">"%d "</span>, i);
+    }
+
+    <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+    </div>
+
+    <p><b>Output:</b></p>
+
+    <div class="code">
+        <pre><code>1 2 3 4 </code></pre>
+    </div><br><br>
+
+  <strong>Continue Statement:</strong>
+  <ul>
+  <li>The <span style="color: blue;">continue</span> statement is used to <span style="color: green;">skip the current iteration</span> of the loop and <span style="color: green;">continue with the next iteration</span>.</li>
+  <li>When encountered, <span style="color: blue;">continue</span> skips the remaining code inside the loop for the current iteration and moves to the <span style="color: green;">next iteration</span> of the loop.</li>
+  <li>It's often used to <span style="color: green;">skip certain iterations</span> based on specific conditions without <span style="color: green;">exiting the loop entirely</span>.</li>
+</ul>
+
+
+<p><b>Example:</b></p>
+  <div class="code">
+      <pre><code>#include &lt;stdio.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i <= <span class="number">10</span>; i++) {
+      <span class="keyword">if</span> (i % <span class="number">2</span> == <span class="number">0</span>) {
+          <span class="keyword">continue</span>; <span class="comment">// Skip even numbers</span>
+      }
+      <span class="function">printf</span>(<span class="string">"%d "</span>, i);
+  }
+
+  <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+  </div>
+
+  <p><b>Output:</b></p>
+
+  <div class="code">
+      <pre><code>1 3 5 7 9 </code></pre>
+  </div>
+
+<p><strong>In summary:</strong></p>
+
+<ul>
+    <li><strong>break</strong> is used to exit a loop prematurely.</li>
+    <li><strong>continue</strong> is used to skip the current iteration of the loop and continue with the next iteration.</li>
+</ul>
+
+    
+  </div>
+    
+    
 </body>
 </html>

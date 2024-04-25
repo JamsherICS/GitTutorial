@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>68_c_header_files.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>header</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>68_c_header_files.html</h1>
+
+  <div class="container">
+
+    <p><span class="preprocessor">Header files</span> in C are files that contain declarations of functions, variables, constants, and other data types. They are commonly used to provide interfaces to libraries or modules, allowing other source files to use the declared entities without needing to know the implementation details. Header files typically have a <code>.h</code> extension.</p>
+
+    <p>To create your own header file in C, follow these steps:</p>
+    
+    
+        <p><b>1. Create a New File:</b></p>
+        <ul>
+          <li>Open a text editor or an integrated development environment (IDE) and create a new file with the <code>.h</code> extension.</li>
+            <li><strong>Example:</strong> <code>myheader.h</code></li>
+        </ul>
+        <p><b>2. Write Declarations:</b></p>
+        <ul>
+          <li>Write the declarations for functions, variables, constants, and data types that you want to expose to other source files.</li>
+            <li>Use the syntax similar to how you would declare these entities in a C source file.</li> 
+        </ul>
+    
+
+    <p><strong>Example:</strong></p>
+
+    <div class="code" style="background-color: #121212; color: #c8ccd4; padding: 10px; border-radius: 5px; overflow-x: auto;">
+      <pre><code>// myheader.h
+  
+  <span class="comment">// Function declaration</span>
+  <span class="keyword">int</span> add(<span class="keyword">int</span> a, <span class="keyword">int</span> b);
+  
+  <span class="comment">// Constant declaration</span>
+  <span class="keyword">#define</span> PI <span class="number">3.14159</span>
+  
+  <span class="comment">// Structure declaration</span>
+  <span class="keyword">typedef</span> <span class="keyword">struct</span> {
+      <span class="keyword">int</span> x;
+      <span class="keyword">int</span> y;
+  } Point;</code></pre>
+  </div>
+  
+  <p><b>3. Save the File:</b></p>
+  <ul>
+    <li>Save the header file in the directory where your source files are located or in a directory included in the compiler's search path.</li>
+      
+  </ul>
+
+  <p><b>4. Include the Header File in Source Files:</b></p>
+  <ul>
+    <li>To use the declarations from your header file in a source file, include the header file using the #include directive.</li>
+    <li><strong>Example:</strong> <code>#include "myheader.h"</code></li>
+  </ul>
+
+  <p><b>5. Compile the Source Files::</b></p>
+  <ul>
+    <li>When you compile your source files, make sure to include the header file along with the source file containing the implementation of the declared entities.</li>
+    
+  </ul>
+
+  </div>
+    
 </body>
 </html>

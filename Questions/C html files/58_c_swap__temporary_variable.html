@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>58_c_swap__temporary_variable.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>swap</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>58_c_swap__temporary_variable.html</h1>
+
+  <div class="container">
+
+<p>You can swap the values of two variables without using a temporary variable by using arithmetic operations or bitwise operations.</p>
+<p><b>1. Using Arithmetic Operations:</b></p>
+
+  <div class="code">
+      <pre><code>#include &lt;stdio.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+  <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>;
+  
+  <span class="function">printf</span>(<span class="string">"Before swapping: a = %d, b = %d\n"</span>, a, b);
+  
+  a = a + b;
+  b = a - b;
+  a = a - b;
+  
+  <span class="function">printf</span>(<span class="string">"After swapping: a = %d, b = %d\n"</span>, a, b);
+  
+  <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+  </div>
+
+  <p>Output:</p>
+
+  <div class="code">
+      <pre><code>Before swapping: a = 5, b = 10
+After swapping: a = 10, b = 5</code></pre>
+  </div>
+
+
+<p><b>2. Using Bitwise XOR Operation:</b></p>
+
+  <div class="code">
+      <pre><code>#include &lt;stdio.h&gt;
+
+<span class="keyword">int</span> <span class="function">main</span>() {
+  <span class="keyword">int</span> a = <span class="number">5</span>, b = <span class="number">10</span>;
+  
+  <span class="function">printf</span>(<span class="string">"Before swapping: a = %d, b = %d\n"</span>, a, b);
+  
+  a = a ^ b;
+  b = a ^ b;
+  a = a ^ b;
+  
+  <span class="function">printf</span>(<span class="string">"After swapping: a = %d, b = %d\n"</span>, a, b);
+  
+  <span class="keyword">return</span> <span class="number">0</span>;
+}</code></pre>
+  </div>
+
+  <p>Output:</p>
+
+  <div class="code">
+      <pre><code>Before swapping: a = 5, b = 10
+After swapping: a = 10, b = 5</code></pre>
+  
+
+</div>
+
+
+
+  </div>
+    
+    
 </body>
 </html>

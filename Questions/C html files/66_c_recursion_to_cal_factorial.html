@@ -1,9 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>66_c_recursion_to_cal_factorial.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>recursion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>66_c_recursion_to_cal_factorial.html</h1>
+
+  <div class="container">
+    <p>Recursion is a programming technique where a function calls itself directly or indirectly to solve a problem. It's a powerful concept that simplifies the implementation of certain algorithms, especially those involving repetitive structures like trees, graphs, or mathematical series.</p>
+
+    <p>Here's a recursive function to calculate the factorial of a non-negative integer in C:</p>
+    
+      <div class="code">
+          <pre><code>  <span class="preprocessor">#include</span> &lt;stdio.h&gt;
+  
+  <span class="comment">// Recursive function to calculate factorial</span>
+  <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> factorial(<span class="keyword">int</span> n) {
+      <span class="comment">// Base case: factorial of 0 is 1</span>
+      <span class="keyword">if</span> (n == <span class="number">0</span>) {
+          <span class="keyword">return</span> <span class="number">1</span>;
+      }
+      <span class="comment">// Recursive case: factorial of n is n multiplied by factorial of (n-1)</span>
+      <span class="keyword">else</span> {
+          <span class="keyword">return</span> n * factorial(n - <span class="number">1</span>);
+      }
+  }
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">int</span> num;
+      printf(<span class="string">"Enter a non-negative integer: "</span>);
+      scanf(<span class="string">"%d"</span>, &amp;num);
+  
+      <span class="keyword">if</span> (num &lt; <span class="number">0</span>) {
+          printf(<span class="string">"Factorial is not defined for negative numbers.\n"</span>);
+      } <span class="keyword">else</span> {
+          <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> fact = factorial(num);
+          printf(<span class="string">"Factorial of %d is %llu\n"</span>, num, fact);
+      }
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }</code></pre>
+      </div>
+  
+
+      <p><b>Output:</b></p>
+
+      <div class="code">
+        <pre><code>  Enter a non-negative integer: 5
+  Factorial of 5 is 120</code></pre>
+            </div>
+
+            <p>This code defines a recursive function <code>factorial()</code> to calculate the factorial of a non-negative integer <code>n</code>. It uses the following approach:</p>
+
+<ul>
+    <li><strong>Base case:</strong> If <code>n</code> is 0, the factorial is defined as 1.</li>
+    <li><strong>Recursive case:</strong> If <code>n</code> is greater than 0, the factorial is calculated by multiplying <code>n</code> with the factorial of (<code>n-1</code>).</li>
+    <li>The function keeps calling itself with decreasing values of <code>n</code> until it reaches the base case.</li>
+</ul>
+
+<p>However, it's important to note that excessive recursion can lead to stack overflow, especially for large values of <code>n</code>. Therefore, recursion should be used judiciously, and for problems where it simplifies the solution.</p>
+
+    
+  </div>
+    
 </body>
 </html>

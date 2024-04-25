@@ -1,9 +1,88 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>53_c_i_plus_plus_and_plus_plus_i.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>i++</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>53_c_i_plus_plus_and_plus_plus_i.html</h1>
+  <div class="container">
+
+    <p>In C, both <code><span style="color: blue;">++i</span></code> and <code><span style="color: blue;">i++</span></code> are unary increment operators used to increase the value of a variable <code><span style="color: red;">i</span></code> by 1. However, the difference lies in their behavior regarding the value they yield and when the increment operation occurs:</p>
+
+    <p><strong>Prefix Increment Operator <code><span style="color: blue;">++i</span></code>:</strong><br>
+    The prefix increment operator first increments the value of <code><span style="color: red;">i</span></code> and then returns the updated value.<br>
+    So, if <code><span style="color: red;">i</span></code> is initially 5, <code><span style="color: blue;">++i</span></code> will first increment <code><span style="color: red;">i</span></code> to 6 and then yield the value 6.<br>
+    <br><b>Example:</b></p>
+    
+    <div class="code">
+      <pre><code><span class="keyword">int</span> i = <span class="var">5</span>;
+<span class="keyword">int</span> result = <span class="keyword">++</span>i; <span class="comment">// Now i is 6, result is 6</span></code></pre>
+  </div>
+    
+    <p><strong>Postfix Increment Operator <code><span style="color: blue;">i++</span></code>:</strong><br>
+    The postfix increment operator first returns the current value of <code><span style="color: red;">i</span></code> and then increments it.<br>
+    So, if <code><span style="color: red;">i</span></code> is initially 5, <code><span style="color: blue;">i++</span></code> will yield the value 5 and then increment <code><span style="color: red;">i</span></code> to 6.<br>
+    <br><b>Example:</b></p>
+    
+    <div class="code">
+      <pre><code><span class="keyword">int</span> i = <span class="var">5</span>;
+<span class="keyword">int</span> result = i<span class="keyword">++</span>; <span class="comment">// result is 5, now i is 6</span></code></pre>
+  </div>
+    
+    <p><b>In summary:</b></p>
+    
+    <ul>
+        <li><code><span style="color: blue;">++i</span></code> increments <code><span style="color: red;">i</span></code> and then evaluates the expression.</li>
+        <li><code><span style="color: blue;">i++</span></code> evaluates the expression and then increments <code><span style="color: red;">i</span></code>.</li>
+    </ul>
+    
+  
+    </div>
 </body>
 </html>

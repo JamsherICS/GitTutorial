@@ -1,9 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>67_c_pointers_to_pointers.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pointer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>67_c_pointers_to_pointers.html</h1>
+
+  <div class="container">
+
+    <p>Pointers to pointers, also known as double pointers, are pointers that store the address of another pointer. In C, pointers to pointers provide a way to indirectly access and modify a pointer variable, enabling dynamic memory allocation and manipulation of data structures like arrays and linked lists. Here's an explanation of pointers to pointers:</p>
+
+    <p><strong>Definition:</strong></p>
+    <ul>
+        <li>A pointer to a pointer is declared by using two asterisks (<code>**</code>) before the variable name.</li>
+        <li><strong>Syntax:</strong> <code>type **pointer_to_pointer;</code></li>
+    </ul>
+    
+    <p><strong>Memory Representation:</strong></p>
+    <ul>
+        <li>Just like a regular pointer, a pointer to a pointer also holds a memory address.</li>
+        <li>However, instead of pointing to a single data object, it points to another pointer variable that, in turn, points to a data object.</li>
+        <li>This creates an additional level of indirection, allowing for more flexibility in memory management.</li>
+    </ul>
+    
+    <p><strong>Usage:</strong></p>
+    <ul>
+        <li>Pointers to pointers are commonly used in scenarios where you need to dynamically allocate memory or modify pointer variables indirectly.</li>
+        <li>They are frequently used in functions that need to modify a pointer variable passed as an argument.</li>
+        <li>They are also used in dynamic data structures like linked lists, trees, and multi-dimensional arrays.</li>
+    </ul>
+    
+    <p><strong>Example:</strong></p>
+
+      <div class="code">
+          <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      <span class="keyword">int</span> num = <span class="number">10</span>;
+      <span class="keyword">int</span> *ptr = &amp;num; <span class="comment">// Pointer to an integer variable</span>
+      <span class="keyword">int</span> **ptr_to_ptr = &amp;ptr; <span class="comment">// Pointer to a pointer variable</span>
+  
+      <span class="comment">// Accessing the value using pointer to pointer</span>
+      printf(<span class="string">"Value of num: %d\n"</span>, **ptr_to_ptr); <span class="comment">// Prints 10</span>
+  
+      <span class="comment">// Modifying the value indirectly using pointer to pointer</span>
+      **ptr_to_ptr = <span class="number">20</span>;
+      printf(<span class="string">"Modified value of num: %d\n"</span>, num); <span class="comment">// Prints 20</span>
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }</code></pre>
+      </div>
+  
+      <p><b>Output:</b></p>
+
+  <div class="code">
+        <pre><code>  Value of num: 10
+  Modified value of num: 20</code></pre>
+            </div>
+
+            <p>In this example, <code>ptr_to_ptr</code> is a pointer to a pointer that stores the address of <code>ptr</code>.</p>
+            <p>Dereferencing <code>ptr_to_ptr</code> twice (<code>**ptr_to_ptr</code>) allows us to access the value pointed to by <code>ptr</code>, which is the value of <code>num</code>.</p>
+            <p>We can modify the value of <code>num</code> indirectly by dereferencing <code>ptr_to_ptr</code> twice and assigning a new value.</p>
+            
+            <p><strong>Dynamic Memory Allocation:</strong></p>
+            <ul>
+                <li>Pointers to pointers are frequently used in dynamic memory allocation scenarios, where memory is allocated dynamically using functions like <code>malloc()</code> and <code>calloc()</code>.</li>
+                <li>They allow for the creation of dynamic data structures of arbitrary sizes and shapes.</li>
+            </ul>
+            
+    
+  </div>
+    
 </body>
 </html>

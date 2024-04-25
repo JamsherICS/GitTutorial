@@ -1,9 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>51_c_adv_and_disadv_of_recursion.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>recursion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>51_c_adv_and_disadv_of_recursion.html</h1>
+
+    <div class="container">
+        <h3>Advantages of Recursion:</h3>
+        <p>
+          <b>Simplicity:</b> Recursive solutions often mirror the problem statement closely, leading to simple and easy-to-understand code.
+        </p>
+        <p>
+          <b>Reduced Complexity:</b> Recursion can simplify code by breaking down complex problems into smaller, more manageable subproblems.
+        </p>
+        <p>
+        <b>Modularity:</b> Recursive functions can be designed to solve a specific subproblem, promoting code reusability and modularity.
+        </p>
+    
+        <h3>Disadvantages of Recursion:</h3>
+        <p>
+        <b>Stack Overhead:</b> Each recursive call consumes additional memory on the call stack, which can lead to stack overflow errors if the recursion depth is too deep or if memory is limited.
+        </p>
+        <p>
+        <b>Performance Overhead:</b> Recursive functions often incur more overhead compared to iterative solutions due to the function call overhead and additional memory allocation for each recursive call.
+        </p>
+        <p>
+        <b>Limited Tail Call Optimization:</b> C compilers may not optimize tail-recursive functions, leading to unnecessary stack usage for tail calls.
+        </p>
+      </div>
+    
 </body>
 </html>

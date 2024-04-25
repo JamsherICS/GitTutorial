@@ -1,9 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>77_c_doubly_linked_list.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>doubly</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>77_c_doubly_linked_list.html</h1>
+
+  <div class="container">
+    <p>A doubly linked list is a type of linked list in which each node contains two pointers: one pointing to the next node in the sequence (commonly called the "next" pointer), and another pointing to the previous node (commonly called the "previous" pointer). This structure allows traversal of the list in both forward and backward directions.</p>
+    <p><b>Example: </b></p>
+    
+      <div class="code">
+        <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+  <span class="preprocessor">#include</span> &lt;stdlib.h&gt;
+  
+  <span class="comment">// Define the structure for each node in the doubly linked list</span>
+  <span class="keyword">typedef struct</span> Node {
+      <span class="keyword">int</span> data;
+      <span class="keyword">struct</span> Node* prev;
+      <span class="keyword">struct</span> Node* next;
+  } Node;
+  
+  <span class="comment">// Function to create a new node</span>
+  Node* createNode(<span class="keyword">int</span> data) {
+      Node* newNode = (Node*)malloc(<span class="keyword">sizeof</span>(Node));
+      <span class="keyword">if</span> (newNode == NULL) {
+          printf(<span class="string">"Memory allocation failed\n"</span>);
+          exit(1);
+      }
+      newNode-&gt;data = data;
+      newNode-&gt;prev = NULL;
+      newNode-&gt;next = NULL;
+      <span class="keyword">return</span> newNode;
+  }
+  
+  <span class="comment">// Function to insert a node at the beginning of the list</span>
+  <span class="keyword">void</span> insertAtBeginning(Node** head, <span class="keyword">int</span> data) {
+      Node* newNode = createNode(data);
+      <span class="keyword">if</span> (*head == NULL) {
+          *head = newNode;
+      } <span class="keyword">else</span> {
+          newNode-&gt;next = *head;
+          (*head)-&gt;prev = newNode;
+          *head = newNode;
+      }
+  }
+  
+  <span class="comment">// Function to insert a node at the end of the list</span>
+  <span class="keyword">void</span> insertAtEnd(Node** head, <span class="keyword">int</span> data) {
+      Node* newNode = createNode(data);
+      <span class="keyword">if</span> (*head == NULL) {
+          *head = newNode;
+      } <span class="keyword">else</span> {
+          Node* temp = *head;
+          <span class="keyword">while</span> (temp-&gt;next != NULL) {
+              temp = temp-&gt;next;
+          }
+          temp-&gt;next = newNode;
+          newNode-&gt;prev = temp;
+      }
+  }
+  
+  <span class="comment">// Function to display the doubly linked list in forward direction</span>
+  <span class="keyword">void</span> displayForward(Node* head) {
+      printf(<span class="string">"Forward: "</span>);
+      <span class="keyword">while</span> (head != NULL) {
+          printf(<span class="string">"%d "</span>, head-&gt;data);
+          head = head-&gt;next;
+      }
+      printf(<span class="string">"\n"</span>);
+  }
+  
+  <span class="comment">// Function to display the doubly linked list in backward direction</span>
+  <span class="keyword">void</span> displayBackward(Node* tail) {
+      printf(<span class="string">"Backward: "</span>);
+      <span class="keyword">while</span> (tail != NULL) {
+          printf(<span class="string">"%d "</span>, tail-&gt;data);
+          tail = tail-&gt;prev;
+      }
+      printf(<span class="string">"\n"</span>);
+  }
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      Node* head = NULL;
+  
+      insertAtEnd(&amp;head, <span class="number">10</span>);
+      insertAtEnd(&amp;head, <span class="number">20</span>);
+      insertAtEnd(&amp;head, <span class="number">30</span>);
+  
+      displayForward(head);   <span class="comment">// Output: Forward: 10 20 30</span>
+      displayBackward(head);  <span class="comment">// Output: Backward: 30 20 10</span>
+  
+      insertAtBeginning(&amp;head, <span class="number">5</span>);
+  
+      displayForward(head);   <span class="comment">// Output: Forward: 5 10 20 30</span>
+      displayBackward(head);  <span class="comment">// Output: Backward: 30 20 10 5</span>
+  
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+          </code></pre>
+      </div>
+  
+      <p><b>Output:</b></p>
+
+      <div class="code">
+    <pre><code>    Forward: 10 20 30 
+    Backward: 30 20 10 
+    Forward: 5 10 20 30 
+    Backward: 30 20 10 5</code></pre>
+            </div>  
+
+            <p><strong>In this implementation:</strong></p>
+            <ul>
+                <li>We define a <strong>Node</strong> structure to represent each node in the doubly linked list. Each node contains an integer data element and two pointers: one pointing to the previous node (<em>prev</em>) and another pointing to the next node (<em>next</em>).</li>
+                <li>We provide functions to create a new node, insert a node at the beginning of the list, insert a node at the end of the list, and display the list in both forward and backward directions.</li>
+                <li>We demonstrate the usage of the doubly linked list by inserting elements at the beginning and end of the list, and then displaying the list in both forward and backward directions.</li>
+            </ul>
+            
+    
+  </div>
+    
 </body>
 </html>

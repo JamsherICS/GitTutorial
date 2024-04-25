@@ -1,9 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>75_c_local_and_global_variables.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>variable</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+    .preprocessor {
+      color: #e6a23c;
+    }
+  </style>
 </head>
 <body>
-<h1>75_c_local_and_global_variables.html</h1>
+
+  <div class="container">
+
+    <p><strong>1. Local Variables:</strong></p>
+    <ul>
+        <li><strong>Scope:</strong> Local variables are declared inside a block or function, and their scope is limited to that block or function. They are accessible only within the block or function in which they are defined.</li>
+        <li><strong>Lifetime:</strong> Local variables are created when the block or function is entered and destroyed when the block or function exits. They exist only for the duration of the block or function in which they are declared.</li>
+        <li><strong>Accessibility:</strong> Local variables are not visible outside the block or function in which they are defined. They cannot be accessed or modified by other functions or blocks in the program.</li>
+    </ul>
+    
+    <p><strong>Example:</strong></p>
+  
+      <div class="code">
+          <pre><code><span class="preprocessor">  #include</span> &lt;stdio.h&gt;
+  
+  <span class="function">void</span> function() {
+      <span class="keyword">int</span> x = <span class="number">10</span>; <span class="comment">// Local variable</span>
+      printf(<span class="string">"Local variable x: %d\n"</span>, x);
+  }
+  
+  <span class="keyword">int</span> <span class="function">main</span>() {
+      function();
+      <span class="comment">// printf("%d\n", x); // Error: x is not accessible here</span>
+      <span class="keyword">return</span> <span class="number">0</span>;
+  }
+          </code></pre>
+      </div>
+  
+      <p><strong>2. Global Variables:</strong></p>
+      <ul>
+          <li><strong>Scope:</strong> Global variables are declared outside of all functions, typically at the beginning of the file or at the top of the program. They have global scope, meaning they are accessible from any part of the program, including all functions in all files of the program.</li>
+          <li><strong>Lifetime:</strong> Global variables are created when the program starts and exist for the entire duration of the program's execution. They are destroyed when the program terminates.</li>
+          <li><strong>Accessibility:</strong> Global variables can be accessed and modified from any part of the program. They are visible to all functions and blocks within the program, allowing for easy sharing of data between different parts of the program.</li>
+      </ul>
+      
+      <p><strong>Example:</strong></p>
+
+        <div class="code">
+            <pre><code><span class="preprocessor">    #include</span> &lt;stdio.h&gt;
+    
+    <span class="keyword">int</span> globalVar = <span class="number">20</span>; <span class="comment">// Global variable</span>
+    
+    <span class="function">void</span> function() {
+        printf(<span class="string">"Global variable: %d\n"</span>, globalVar);
+    }
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        printf(<span class="string">"Global variable: %d\n"</span>, globalVar);
+        function();
+        globalVar = <span class="number">30</span>; <span class="comment">// Modify global variable</span>
+        printf(<span class="string">"Modified global variable: %d\n"</span>, globalVar);
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }
+            </code></pre>
+        </div>
+    
+        <p><strong>In summary,</strong> the main differences between local and global variables in C lie in their scope, lifetime, and accessibility. Local variables are limited to a specific block or function, have a shorter lifetime, and are not visible outside their scope. Global variables, on the other hand, are accessible throughout the program, have a longer lifetime, and can be accessed and modified from any part of the program.</p>
+
+
+
+
+  </div>
+    
 </body>
 </html>

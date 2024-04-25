@@ -1,9 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>61_c_static_and_dynamic.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>static</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>61_c_static_and_dynamic.html</h1>
+
+  <div class="container">
+
+    <p><strong>Static Memory Allocation:</strong></p>
+
+    <ul>
+        <li>Static memory allocation is done at compile time.</li>
+        <li>Memory is allocated for variables when the program starts and remains allocated throughout the program's execution.</li>
+        <li>The size of the memory block is fixed and determined by the compiler.</li>
+        <li>Variables declared with static allocation are allocated on the stack or in the global memory area, depending on their scope.</li>
+        <li>Examples include global variables, local static variables, and arrays with fixed sizes.</li>
+    </ul>
+
+    
+      <div class="code">
+          <pre><code><span class="keyword">  int</span> global_variable; <span class="comment">// Global variable</span>
+  <span class="keyword">static</span> <span class="keyword">int</span> static_variable; <span class="comment">// Static variable</span>
+  <span class="keyword">void</span> <span class="function">function</span>() {
+      <span class="keyword">static</span> <span class="keyword">int</span> local_static_variable; <span class="comment">// Local static variable</span>
+  }</code></pre>
+      </div>
+
+  
+  <p><strong>Dynamic Memory Allocation:</strong></p>
+
+<ul>
+    <li>Dynamic memory allocation is done at runtime using library functions like <code>malloc()</code>, <code>calloc()</code>, and <code>realloc()</code> from the <code>&lt;stdlib.h&gt;</code> header.</li>
+    <li>Memory is allocated on the heap, a region of memory separate from the stack.</li>
+    <li>Memory allocation and deallocation can be done dynamically during program execution.</li>
+    <li>The size of the memory block can be determined at runtime, allowing for flexibility in memory management.</li>
+    <li>Dynamic memory allocation is useful when the size of data structures is not known at compile time or when memory needs to be allocated and deallocated dynamically.</li>
+</ul>
+
+
+
+<div class="code">
+     <pre><code><span class="keyword">  int</span> global_variable; <span class="comment">// Global variable</span>
+  <span class="keyword">static</span> <span class="keyword">int</span> static_variable; <span class="comment">// Static variable</span>
+  <span class="keyword">void</span> <span class="function">function</span>() {
+      <span class="keyword">static</span> <span class="keyword">int</span> local_static_variable; <span class="comment">// Local static variable</span>
+  }</code></pre>
+</div>
+    
+  </div>
+    
 </body>
 </html>

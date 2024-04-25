@@ -1,9 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<title>57_c_diffe_value_and_reference.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>pass</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+
+    h3 {
+      color: #007bff;
+    }
+
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+
+    .comment {
+      color: #9c9c9c;
+    }
+
+    .keyword {
+      color: #e6a23c;
+    }
+
+    .function {
+      color: #f56c6c;
+    }
+
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
+
 <body>
-<h1>57_c_diffe_value_and_reference.html</h1>
+
+  <div class="container">
+    <p>In programming, when you pass arguments to a function, you can do so
+      either by <span style="color: blue;">value</span> or by <span style="color: green;">reference</span>. The
+      difference lies in how the
+      function accesses and manipulates the values of these arguments:</p>
+
+    <strong>Pass by Value:</strong>
+    <ul>
+      <li>When you pass arguments to a function by <span style="color: blue;">value</span>, the function receives a copy
+        of
+        the actual value of the arguments.</li>
+      <li>Any changes made to the parameter variables inside the function do
+        not affect the original variables in the calling code.</li>
+      <li>It's like giving someone a photocopy of a document rather than the
+        original document itself. Modifying the photocopy doesn't affect the
+        original document.</li>
+    </ul>
+
+    <strong>Pass by Reference:</strong>
+    <ul>
+      <li>When you pass arguments to a function by <span style="color: green;">reference</span>, the function receives
+        the
+        memory address (reference) of the actual variables.</li>
+      <li>Any changes made to the parameter variables inside the function
+        directly affect the original variables in the calling code because
+        they both point to the same memory location.</li>
+      <li>It's like giving someone the key to a locked box. Any changes made
+        to the contents of the box will affect the original contents since
+        they share the same space.</li>
+    </ul>
+
+    <p><b>Example:</b></p>
+
+    <div class="code">
+      <pre><code>#include &lt;stdio.h&gt;
+              
+    <span class="comment">// Function prototypes</span>
+    <span class="keyword">void</span> <span class="function">passByValue</span>(<span class="keyword">int</span> x);
+    <span class="keyword">void</span> <span class="function">passByReference</span>(<span class="keyword">int</span> *x);
+      
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">int</span> num = <span class="number">10</span>;
+      
+        <span class="comment">// Pass by value</span>
+        <span class="function">printf</span>(<span class="string">"Before passByValue: num = %d\n"</span>, num);
+        <span class="function">passByValue</span>(num);
+        <span class="function">printf</span>(<span class="string">"After passByValue: num = %d\n"</span>, num);
+      
+        <span class="comment">// Pass by reference</span>
+        <span class="function">printf</span>(<span class="string">"Before passByReference: num = %d\n"</span>, num);
+        <span class="function">passByReference</span>(&amp;num);
+        <span class="function">printf</span>(<span class="string">"After passByReference: num = %d\n"</span>, num);
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }
+              
+    <span class="comment">// Function to demonstrate pass by value</span>
+    <span class="keyword">void</span> <span class="function">passByValue</span>(<span class="keyword">int</span> x) {
+        x = x * <span class="number">2</span>;
+        <span class="function">printf</span>(<span class="string">"Inside passByValue: x = %d\n"</span>, x);
+    }
+              
+    <span class="comment">// Function to demonstrate pass by reference</span>
+    <span class="keyword">void</span> <span class="function">passByReference</span>(<span class="keyword">int</span> *x) {
+        *x = *x * <span class="number">2</span>;
+        <span class="function">printf</span>(<span class="string">"Inside passByReference: *x = %d\n"</span>, *x);
+    }</code></pre>
+    </div>
+    
+    <p><b>Output:</b></p>
+    
+    <div class="code">
+      <pre><code>    Before passByValue: num = 10
+    Inside passByValue: x = 20
+    After passByValue: num = 10
+    Before passByReference: num = 10
+    Inside passByReference: *x = 20
+    After passByReference: num = 20</code></pre>
+    </div>
+    
+    <p><strong>In this example:</strong></p>
+    
+    <ul>
+        <li>In the <code>main()</code> function, we have an integer variable
+          <span style="color: blue;">num</span> initialized with the value <span style="color: purple;">10</span>.
+        </li>
+        <li>We then call two functions: <code>passByValue()</code> and
+          <code>passByReference()</code>, passing <span style="color: blue;">num</span> as an argument to both.
+        </li>
+        <li><code>passByValue()</code> takes the value of <span style="color: blue;">num</span> (<span
+            style="color: purple;">10</span>) as its parameter. Inside the
+          function, it doubles the value of <span style="color: orange;">x</span>, but this change doesn't affect the
+          original <span style="color: blue;">num</span> variable in the
+          <code>main()</code> function.
+        </li>
+        <li><code>passByReference()</code> takes a pointer to <span style="color: blue;">num</span> as its parameter.
+          Inside the
+          function, it doubles the value pointed to by <span style="color: orange;">x</span>, which directly modifies the
+          original <span style="color: blue;">num</span> variable.
+        </li>
+    </ul>
+    
+  </div>
+
 </body>
+
 </html>

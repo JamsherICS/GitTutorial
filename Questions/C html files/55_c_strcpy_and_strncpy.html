@@ -1,9 +1,124 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>55_c_strcpy_and_strncpy.html</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title></title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+    }
+    h3 {
+      color: #007bff;
+    }
+    p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .code {
+      font-family: Consolas, monospace;
+      background-color: #121212;
+      color: #c8ccd4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    .comment {
+      color: #9c9c9c;
+    }
+    .keyword {
+      color: #e6a23c;
+    }
+    .function {
+      color: #f56c6c;
+    }
+    .var {
+      color: #61a6ff;
+    }
+  </style>
 </head>
 <body>
-<h1>55_c_strcpy_and_strncpy.html</h1>
+
+    <div class="container">
+
+      <p><span style="color: blue;">strcpy()</span> and <span style="color: green;">strncpy()</span> are both <span style="color: purple;">string manipulation functions</span> in C, but they have some key differences, particularly in how they handle copying characters from one string to another, especially when dealing with <span style="color: orange;">null-terminated strings</span>.</p>
+
+      <b><p>strcpy() Function:<br></b>
+      Prototype: <code>char *strcpy(char *dest, const char *src);</code><br>
+      Copies the entire string from source to destination.<br>
+      Does not check the length of the source string. It copies characters until it encounters the <span style="color: gray;">null terminator ('<code>\0</code>')</span> in the source string.<br>
+      May cause <span style="color: brown;">buffer overflow</span> if the source string is longer than the destination buffer.<br>
+      <br><b>Example:</b></p>
+      <div class="code">
+    <pre><code><span class="comment">// Using strcpy() to copy source to destination</span>
+    <span class="function">strcpy</span>(destination, source);
+    <span class="function">printf</span>(<span class="string">"After strcpy(), destination contains: %s\n"</span>, destination);
+    <span class="keyword">return</span> <span class="number">0</span>;</code></pre>
+    </div>      
+      <b><p>strncpy() Function:<br></b>
+      Prototype: <code>char *strncpy(char *dest, const char *src, size_t n);</code><br>
+      Copies at most <span style="color: purple;">n characters</span> from source to destination.<br>
+      If the length of the source string is less than n, it pads the destination string with <span style="color: gray;">null characters ('<code>\0</code>')</span> until it reaches n characters.<br>
+      If the length of the source string is greater than or equal to n, <span style="color: green;">strncpy()</span> copies exactly n characters and does not null-terminate the destination string if the source string is not null-terminated within the first n characters.<br>
+      Useful for ensuring <span style="color: orange;">buffer boundaries</span> and preventing buffer overflows.<br>
+      <br><b>Example:</b></p>
+      <div class="code">
+        <pre><code><span class="comment">// Copy at most 19 characters from source2 to destination2</span>
+    <span class="function">strncpy</span>(destination2, source2, <span class="number">19</span>);
+    destination2[<span class="number">19</span>] = <span class="char">'\0'</span>; <span class="comment">// Null-terminate the string manually as strncpy() may not do it</span>
+    <span class="function">printf</span>(<span class="string">"After strncpy(), destination2 contains: %s\n"</span>, destination2);
+    <span class="keyword">return</span> <span class="number">0</span>;</code></pre>
+    </div>
+
+      
+        <p>The following C program demonstrates the usage of <span class="function">strcpy()</span> and <span class="function">strncpy()</span> functions:</p>
+    
+        <div class="code">
+            <pre><code>#include &lt;stdio.h&gt;
+    #include &lt;string.h&gt;
+    
+    <span class="keyword">int</span> <span class="function">main</span>() {
+        <span class="keyword">char</span> source[] = <span class="string">"Hello, world!"</span>;
+        <span class="keyword">char</span> destination[<span class="number">20</span>]; <span class="comment">// Destination buffer size should be large enough to hold the copied string</span>
+    
+        <span class="comment">// Using strcpy() to copy source to destination</span>
+        <span class="function">strcpy</span>(destination, source);
+        <span class="function">printf</span>(<span class="string">"After strcpy(), destination contains: %s\n"</span>, destination);
+    
+        <span class="comment">// Using strncpy() to copy only a portion of source to destination</span>
+        <span class="keyword">char</span> source2[] = <span class="string">"This is a longer string than the previous one"</span>;
+        <span class="keyword">char</span> destination2[<span class="number">20</span>]; <span class="comment">// Destination buffer size is limited to 20 characters</span>
+    
+        <span class="function">strncpy</span>(destination2, source2, <span class="number">19</span>); <span class="comment">// Copy at most 19 characters from source2 to destination2</span>
+        destination2[<span class="number">19</span>] = <span class="char">'\0'</span>; <span class="comment">// Null-terminate the string manually as strncpy() may not do it</span>
+        <span class="function">printf</span>(<span class="string">"After strncpy(), destination2 contains: %s\n"</span>, destination2);
+    
+        <span class="keyword">return</span> <span class="number">0</span>;
+    }</code></pre>
+        </div>
+    
+        <p><b>Output:</b></p>
+    
+        <div class="code"><pre><code>
+    After strcpy(), destination contains: Hello, world!
+    After strncpy(), destination2 contains: This is a longer stri</code></pre>
+        </div>
+    
+    
+    </div>
+    
 </body>
 </html>
